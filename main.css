@@ -1,6 +1,6 @@
 body{
     background: url("./img/space.png");
-    background-size:100vw;
+    background-size:100vw 120vh;
     margin:  0px;
     width: 100vw;
     background-attachment:fixed;
@@ -189,6 +189,10 @@ button{
     justify-content: space-between;
     width: 95%;
 }
+.list-balls{
+    position: relative;
+    width: 60%;
+}
 .list-title{
     font-size: 20px;
     letter-spacing: 2px;
@@ -354,4 +358,71 @@ button{
     top:-20px;
     left: -20px;
     z-index: 200;
+}
+.dream-ball{
+    border-radius: 50%;
+    border:1px solid white;
+    width: 20px;
+    height: 20px;
+    right: 110%;
+    transition: all 2s linear;
+    -webkit-transition: all 2s linear;
+    animation: dreamBallSpin 2s linear;
+    position: absolute;
+}
+@keyframes dreamBallSpin{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform:rotate(1080deg);
+    }
+}
+.house-ball{
+    background: url("./img/house.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.car-ball{
+    background: url("./img/car.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.wedding-ball{
+    background: url("./img/wedding.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.kid-ball{
+    background: url("./img/kid.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.parent-ball{
+    background: url("./img/parent.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.plane-ball{
+    background: url("./img/plane.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.retire-ball{
+    background: url("./img/retire.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.company-ball{
+    background: url("./img/company.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }

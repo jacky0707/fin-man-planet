@@ -315,7 +315,7 @@ function addtoList(dream){
         className:"dream-ball "+dream+"-ball",
     }},document.getElementsByClassName("list-"+dream+"-balls")[0])
  
-    setTimeout(function(){dreamBall.style.right="calc(0px + "+(amount*32)+"px)"},10)
+    setTimeout(function(){dreamBall.style.right="calc(0px + "+(amount*22)+"px)"},10)
 }
 function createElement(tagName,settings,parentElement){
     let obj=document.createElement(tagName);
