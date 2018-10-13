@@ -2,29 +2,127 @@
 <html>
     <head>
         <title>Financial Management Planet</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" type="text/css" href="./main.css">
+        <script src="./main.js"></script>
+        <script>
+            let step = 0
+            function onloadFunc(){
+                guideStep(step)
+            }
+        </script>
     </head>
 
-    <body>
-        <div class="content">
-            <div class="doctor-part big-part">
-                <div class="next-stage-button-place">
-                    <button class="next-stage-button"></button>
+    <body onload="onloadFunc()">
+        <div class="black-background">
+            <div class="content">
+                <div class="doctor-part big-part">
+                    <div class="next-stage-button-place">
+                        <button class="next-stage-button"></button>
+                    </div>
+                    <div class="doctor-place">
+                        <div class="doctor"></div>
+                    </div>
+                    <div class="talk-place">
+                        <div class="saying"></div>
+                    </div>             
                 </div>
-                <div class="doctor-place">
-                    <div class="doctor"></div>
+                <div class="planet-part big-part">
+                    <div class="side-planet-part">
+                        <button class="dream-button house" id="house"></button>
+                        <button class="dream-button car" id="car"></button>
+                        <button class="dream-button wedding" id="wedding"></button>
+                        <button class="dream-button kid" id="kid"></button>
+                    </div>
+                    <div class="planet"></div>
+                    <div class="side-planet-part">
+                        <button class="dream-button parent" id="parent"></button>
+                        <button class="dream-button plane" id="plane"></button>
+                        <button class="dream-button retire" id="retire"></button>
+                        <button class="dream-button company" id="company"></button>
+                    </div>
                 </div>
-                <div class="talk-place"></div>             
-            </div>
-            <div class="planet-part big-part">
-    
-            </div>
-            <div class="list-part big-part">
-    
-            </div>
-            <div class="basic-information-part big-part">
-        
+                <div class="list-part big-part">
+                    <div class="side-list">
+                        <div class="list-item">
+                            <div class="list-house-title list-title">房子</div>
+                            <div class="list-house-balls list-balls"></div>
+                            <input type="text" name="house" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                        </div>
+                        <div class="list-item">
+                            <div class="list-car-title list-title">車子</div>
+                            <div class="list-car-balls list-balls"></div>
+                            <input type="text" name="car" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                        </div>
+                        <div class="list-item">
+                            <div class="list-wedding-title list-title">婚禮</div>
+                            <div class="list-wedding-balls list-balls"></div>
+                            <input type="text" name="wedding" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                        </div>
+                        <div class="list-item">
+                            <div class="list-kid-title list-title">小孩</div>
+                            <div class="list-kid-balls list-balls"></div>
+                            <input type="text" name="kid" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                        </div>
+                    </div> 
+                    <div class="side-list">
+                        <div class="list-item">
+                            <div class="list-parent-title list-title">父母</div>
+                            <div class="list-parent-balls list-balls"></div>
+                            <input type="text" name="parent" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                        </div>
+                        <div class="list-item">
+                            <div class="list-plane-title list-title ">旅遊</div>
+                            <div class="list-plane-balls list-balls"></div>
+                            <input type="text" name="plane" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                        </div>
+                        <div class="list-item">
+                            <div class="list-retire-title list-title">退休</div>
+                            <div class="list-retire-balls list-balls"></div>
+                            <input type="text" name="retire" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                        </div>
+                        <div class="list-item">
+                            <div class="list-company-title list-title ">創業</div>
+                            <div class="list-company-balls list-balls"></div>
+                            <input type="text" name="company" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                        </div>
+                    </div>
+                </div>
+                <div class="basic-information-part big-part">
+                    <div class="basic-info">
+                        <div class="side-list">
+                            <div class="basic-item">
+                                <div class="basic-title">目前薪水 ( 年薪 )</div>
+                                <input type="text" name="salary" class="dream-total" value="650000" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
+                            </div>
+                            <div class="basic-item">
+                                <div class="basic-title">目前年紀 ( 歲 )</div>
+                                <input type="text" name="age" class="dream-total" value="25" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
+                            </div>
+                            <div class="basic-item">
+                                <div class="basic-title">當前資產 ( 元 )</div>
+                                <input type="text" name="fortune" class="dream-total" value="0" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
+                            </div>
+                        </div>
+                        <div class="side-list">
+                            <div class="basic-item">
+                                <div class="basic-title">每月固定花費 ( 元 )</div>
+                                <input type="text" name="cost" class="dream-total" value="15000" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
+                            </div>
+                            <div class="basic-item">
+                                <div class="basic-title">預計退休年紀 ( 歲 )</div>
+                                <input type="text" name="retire" class="dream-total" value="65" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
+                            </div>
+                            <div class="basic-item">
+                                <div class="basic-title">人生畢業典禮年紀 ( 歲 )</div>
+                                <input type="text" name="die-age" class="dream-total" value="90" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
+                            </div>
+                        </div>
+                    </div>
+                    <button class="test-button">星球完成！!<br>開始診斷</button>
+                </div>
             </div>
         </div>
+        
     </body>
 </html>
