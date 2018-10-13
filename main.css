@@ -98,12 +98,12 @@ button{
     align-items: flex-start;
 }
 .planet-part{
-    margin: 50px;
+    margin: 75px;
     width: 100%;
     height: 300px;/* 高度用到 px */
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     opacity: 0;
     transition: all 1s;
 }
@@ -124,6 +124,7 @@ button{
     box-shadow: 0px 0px 5px 1px white;
 }
 .planet{
+    position: relative;
     height: 300px;
     width: 300px;
     background-image: url("./img/venus.png");
@@ -131,7 +132,12 @@ button{
     background-repeat: no-repeat;
     background-position: center;
     transition: all 1s;
-    animation: planetSpin linear infinite 60s;
+    animation: planetSpin linear infinite 120s;
+}
+@keyframes planetSpin{
+    to{
+        transform:rotate( 360deg)
+    }
 }
 #house{
     background-image: url("./img/house.png")
@@ -158,7 +164,7 @@ button{
     background-image: url("./img/company.png")
 }
 .list-part{
-    margin: 0px 50px 50px 50px;
+    margin: 0px 75px 75px 75px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -235,4 +241,117 @@ button{
     justify-content: space-between;
     width: 100%;
     font-size: 14px;
+}
+.adding-dream{
+    width: 100px;
+    height: 100px;
+    transition: all 1s;
+    -webkit-transition: all 1s;
+}
+.planet-things{
+    display: none;
+    position: absolute;
+}
+.house-planet{
+    width: 340px;
+    height: 340px;
+    background: url("./img/house.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 50px 35px;
+    top:-20px;
+    left: -20px;
+    z-index: 200;
+}
+.car-planet{
+    width: 340px;
+    height: 340px;
+    background: url("./img/car.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 40px 22px;
+    top:-20px;
+    left: -20px;
+    z-index: 100;
+    animation: carDriving 15s linear infinite;
+}
+@keyframes carDriving{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-1turn);
+    }
+}
+@keyframes planeDrive{
+    to{
+        transform: rotate(1turn);
+    }
+}
+.wedding-planet{
+    width: 150px;
+    height: 150px;
+    background: url("./img/wedding.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 50px 50px;
+    top:75px;
+    left: 75px;
+    z-index: 200;
+}
+.kid-planet{
+    width: 260px;
+    height: 260px;
+    background: url("./img/kid.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 35px 35px;
+    top:20px;
+    left: 20px;
+    z-index: 200;
+}
+.parent-planet{
+    width: 150px;
+    height: 150px;
+    background: url("./img/parent.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 35px 50px;
+    top:75px;
+    left: 75px;
+    z-index: 200;
+}
+.plane-planet{
+    width: 380px;
+    height: 380px;
+    background: url("./img/plane.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 40px 20px;
+    top:-40px;
+    left: -40px;
+    z-index: 200;
+    animation: planeDrive 10s linear infinite;
+}
+.retire-planet{
+    width: 150px;
+    height: 150px;
+    background: url("./img/retire.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 50px 50px;
+    top:75px;
+    left: 75px;
+    z-index: 200;
+}
+.company-planet{
+    width: 340px;
+    height: 340px;
+    background: url("./img/company.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 50px 35px;
+    top:-20px;
+    left: -20px;
+    z-index: 200;
 }
