@@ -4,7 +4,7 @@
         <title>Financial Management Planet</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <link rel="stylesheet" type="text/css" href="./main.css">
-        <script src="./main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
         <script>
             let housePlace = [90,135,225,315,0]
             let companyPlace =[45,180,270]
@@ -13,11 +13,14 @@
             let parentPlace = [262]
             let retirePlace = [142]
 
+            let ageStage = 0
             let step = 0
             function onloadFunc(){
                 guideStep(step)
             }
         </script>
+        <script src="./main.js"></script>
+
     </head>
 
     <body onload="onloadFunc()">
@@ -25,7 +28,7 @@
             <div class="content">
                 <div class="doctor-part big-part">
                     <div class="next-stage-button-place">
-                        <button class="next-stage-button"></button>
+                        <!--<button class="next-button" onclick="skip()">跳過教學</button>-->
                     </div>
                     <div class="doctor-place">
                         <div class="doctor"></div>
@@ -34,6 +37,24 @@
                         <div class="saying"></div>
                     </div>             
                 </div>
+                <div class="test-part big-part">
+                    <div class="chart-part">
+                        <div class="bar-part">
+                            <canvas id="bar" height="60"></canvas>
+                        </div>
+                        <div class="pie-part">
+                            <canvas id="pie" height="140"></canvas>
+                        </div>
+                    </div>
+                    <div class="age-part">
+                        <div class="robot"></div>
+                        <div class="age-ball-part"></div>
+                    </div>
+                    <div class="money-part">
+                        
+                    </div>
+                </div>
+
                 <div class="planet-part big-part">
                     <div class="side-planet-part">
                         <button class="dream-button house" id="house"></button>
@@ -118,7 +139,7 @@
                             </div>
                             <div class="basic-item">
                                 <div class="basic-title">預計退休年紀 ( 歲 )</div>
-                                <input type="text" name="retire" class="dream-total" value="65" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
+                                <input type="text" name="retire-age" class="dream-total" value="65" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"> 
                             </div>
                             <div class="basic-item">
                                 <div class="basic-title">人生畢業典禮年紀 ( 歲 )</div>
@@ -126,7 +147,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="test-button">星球完成！!<br>開始診斷</button>
+                    <button class="test-button" onclick="startTest()">星球完成！!<br>開始診斷</button>
                 </div>
             </div>
         </div>

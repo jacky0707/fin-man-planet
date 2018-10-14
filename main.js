@@ -1,3 +1,12 @@
+function skip(){
+    guideStep(3.4)
+    document.getElementsByClassName("doctor")[0].style.opacity = 1
+    document.getElementsByClassName("black-background")[0].style.background = "rgba(0,0,0,0)"
+    document.getElementsByClassName('planet-part')[0].style.opacity = 1;
+    document.getElementsByClassName("list-part")[0].style.opacity = 1
+    document.getElementsByClassName("basic-information-part")[0].style.opacity = 1
+    document.getElementsByClassName('next-button')[0].remove()
+}
 function guideStep(step){
     let doctor = document.getElementsByClassName("doctor")[0]
     let bb = document.getElementsByClassName("black-background")[0]
@@ -6,10 +15,9 @@ function guideStep(step){
     switch(step){
         case 0:
         doctor.style.opacity = 1
-        //快速跳過用 eventListener
-        doctor.addEventListener("transitionend",function(){
+        setTimeout(function(){
             guideStep(1)
-        })
+        },1500)
         break;
 
         case 1:
@@ -46,9 +54,9 @@ function guideStep(step){
 
         case 3.0:
         planetPart.style.opacity = 1;
-        planetPart.addEventListener("transitionend",function(){
+        setTimeout(function(){
             guideStep(3.1)
-        })
+        },1500)
         break;
 
         case 3.1:
@@ -82,7 +90,6 @@ function guideStep(step){
         printVerbatim(getStartWords)
         initDreams()
         setTimeout(function(){
-            document.getElementsByClassName("talk-place")[0].style.background = "none"
             document.getElementsByClassName("saying")[0].innerHTML =""
         },3000)
         break;
@@ -296,6 +303,153 @@ function initDreams(){
         }
         dreamElement.addEventListener("mousedown",handler)
     } 
+}
+function startTest(){
+    let testPart = document.getElementsByClassName("test-part")[0]
+    testPart.style.height = "400px";
+    testPart.style.boxShadow = "0px 0px 3px 3px greenyellow"
+
+    let salary = parseInt(document.getElementsByName("salary")[0].value)
+    let age = parseInt(document.getElementsByName("age")[0].value)
+    let retireAge = parseInt(document.getElementsByName("retire-age")[0].value)
+    let fortune = parseInt(document.getElementsByName("fortune")[0].value)
+    let dieAge = parseInt(document.getElementsByName("die-age")[0].value)
+    let cost = parseInt(document.getElementsByName("cost")[0].value)
+
+    let house = parseInt(document.getElementsByName("house")[0].value)
+    let car = parseInt(document.getElementsByName("car")[0].value)
+    let wedding = parseInt(document.getElementsByName("wedding")[0].value)
+    let kid = parseInt(document.getElementsByName("kid")[0].value)
+    let parent = parseInt(document.getElementsByName("parent")[0].value)
+    let plane = parseInt(document.getElementsByName("plane")[0].value)
+    let retire = parseInt(document.getElementsByName("retire")[0].value)
+    let company = parseInt(document.getElementsByName("company")[0].value)
+
+    let dreamTotal = house+car+wedding+kid+parent+plane+retire+company
+    let testTalk1 = "這星球價值 "+ dreamTotal +" 元呢...... 好的，那現在讓我派出硬漢機器人來嘗試為你打造出這顆星球吧！"
+    printVerbatim(testTalk1)
+    let testTalk2 = "硬漢機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，唯一不同的是：硬漢機器人十分硬漢，周圍發生的一切都不會影響他的資產。" 
+    setTimeout(function(){
+        printVerbatim(testTalk2)
+    },3500)
+    let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察硬漢機器人的機器人生囉！"
+    setTimeout(function(){
+        printVerbatim(testTalk3)
+        let nextStage = createElement("BUTTON",{atrs:{
+            className:"next-button",
+            innerHTML:"下一階段"
+        }},document.getElementsByClassName("next-stage-button-place")[0])
+        nextStage.addEventListener('click',handler)
+    },9000)
+    setTimeout(function(){
+        document.getElementsByClassName("saying")[0].innerHTML =""
+    },1100)
+    var pieLabels= ['過了的人生','有收入的人生','沒收入的人生'];
+    let piePart = document.getElementById('pie').getContext('2d')
+    let pieChart = new Chart(piePart,{
+        type: 'pie',
+            data : {
+                labels:pieLabels,
+                datasets: [{
+                    data:[age,retireAge - age,dieAge - retireAge],
+                    backgroundColor: [
+                        "rgb(119,136,153,0.5)",
+                        "rgb(255,215,0,0.5)",
+                        "rgb(127,255,212,0.5)"
+                    ],
+                    borderColor:"transparent",
+                }],
+            },
+            options: {
+                legend: {
+                    labels: {
+                        // This more specific font property overrides the global property
+                        fontColor: 'white'
+                    }
+                }
+            }
+    })
+
+    var barLabels= ['夢想總值','現有資產'];
+    let barPart = document.getElementById('bar').getContext('2d')
+    let barChart = new Chart(barPart,{
+        type: 'horizontalBar',
+            data : {
+                labels:barLabels,
+                datasets: [{
+                    label: "金錢表",
+                    data:[dreamTotal,fortune],
+                    backgroundColor: [
+                        "rgb(119,136,153,0.5)",
+                        "rgb(255,255,255,0.5)",
+                    ],
+                    borderColor: "transparent",
+                }],
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: 'white'
+                    }
+                },
+                scales:{
+                    yAxes:[{
+                        ticks:{
+                            fontColor:"rgb(255,215,0)",
+                            fontSize: 12
+                        }
+                    }],
+                    xAxes:[{
+                        ticks:{
+                            fontColor:"rgb(255,215,0)",
+                            fontSize: 12,
+                            min:0
+                        }
+                    }]
+                }
+            }
+    })
+    for(let lifeExpectancy = dieAge - age;lifeExpectancy>0;lifeExpectancy = lifeExpectancy-10){
+        let ageBall = createElement("DIV",{atrs:{
+            className:"age-ball",
+            innerHTML:parseInt(lifeExpectancy) + parseInt(age)
+        }},document.getElementsByClassName("age-ball-part")[0])
+    }
+    
+    let handler = function(){
+        let ageBalls = document.getElementsByClassName('age-ball-part')[0]
+        let order = ageBalls.children.length - ageStage -1
+        let outsideWidth = (document.body.clientWidth - document.getElementsByClassName('test-part')[0].offsetWidth)/2
+        
+        statePositionX = getPosition(document.getElementsByClassName("age-ball-part")[0].children[order]).x
+        
+        let robot = document.getElementsByClassName('robot')[0]
+        robot.style.left = (statePositionX - outsideWidth - 9) + "px"
+
+        let newAge = parseInt(document.getElementsByClassName("age-ball-part")[0].children[order].innerHTML)
+        let nowFortune = fortune + (newAge-age)*(salary - (cost*12))
+        console.log(nowFortune)
+
+        barChart.data.datasets[0].data = [dreamTotal,nowFortune]
+        barChart.update()
+
+        // newAge 會超過 retireAge
+        //pieChart.data.datasets[0].data = [newAge,retireAge - newAge,dieAge - retireAge]
+        //pieChart.update()
+
+        if(order == ageBalls.children.length -1){
+            let savingWord = '生日快樂！信箱裡寄來一封六年期的儲蓄險宣傳單，但硬漢機器人十分硬漢，他只將宣傳單記錄下來，不會做任何購買。'
+            printVerbatim(savingWord)
+        }
+
+        ageStage++
+        if(ageStage == ageBalls.children.length){
+            document.getElementsByClassName("next-button")[0].remove()
+        }
+    }
+
+    
+
 }
 function dreamShowUp(dream){
     let amount = document.getElementsByClassName(dream+"-planet").length

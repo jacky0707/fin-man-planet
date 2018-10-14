@@ -1,6 +1,6 @@
 body{
     background: url("./img/space.png");
-    background-size:100vw 120vh;
+    background-size:100vw 1500px;
     margin:  0px;
     width: 100vw;
     background-attachment:fixed;
@@ -12,7 +12,7 @@ button{
     background: rgba(0,0,0,1);
     transition: 1.5s;
     width: 100%;
-    height: 120vh;
+    height: 1500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,9 +37,9 @@ button{
         width: 900px;
     }
     .saying{
-        font-size: 20px;
+        font-size: 16px;
         letter-spacing: 2px;
-        line-height: 24px;
+        line-height: 22px;
     }
 }
 @media screen and (max-width: 1000px) and (min-width: 600px){
@@ -52,21 +52,104 @@ button{
         width: 300px;
     }
 }
+.test-part{
+    width: 100%;
+    height: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: white;
+    box-shadow: 0px 0px 0px 0px greenyellow;
+    border-radius: 20px;
+    transition: all 1s;
+    top: 50px;
+    margin-bottom: 50px;
+}
+.chart-part{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 32%;
+    width: 100%;
+}
+.bar-part{
+    position: relative;
+    height: 100%;
+    width: 70%;
+    left: 2%
+}
+.pie-part{
+    position: relative;
+    height: 100%;
+    width: 30%;
+    left: 2%
+}
+.age-part{
+    position: relative;
+    display: flex;
+    height: 18%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items:center;
+}
+.robot{
+    position: absolute;
+    height: 80%;
+    width: 50px;
+    left: 10%;
+    background: url('./img/robot0.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: 1s;
+}
+.age-ball-part{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    left: calc( 10% + 50px );
+    height: 100%;
+    width: calc( 90% - 50px);
+}
+.age-ball{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border:white 1px solid;
+}
+.money-part{
+    height: 50%;
+    width: 100%;
+}
 .doctor-part{
     width: 100%;
-    height: 150px;/* 高度用到 px */
+    height: 100px;/* 高度用到 px */
     display: flex;
     flex-direction: row;
     border-bottom: brown solid 3px;
 }
+.big-part{
+    position: relative;
+}
 .next-stage-button-place{
     width: 20%;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: space-around;
+    align-items: center;
 }
-.next-stage-button{
-    display: none;
+.next-button{
+    height: 50px;
+    width: 75px;
+    color: white;
+    background: black;
+    border-radius: 10px;
+    border:1px solid white
 }
 .doctor-place{
     width: 30%;
@@ -97,8 +180,8 @@ button{
     justify-content: flex-start;
     align-items: flex-start;
 }
+
 .planet-part{
-    margin: 75px;
     width: 100%;
     height: 300px;/* 高度用到 px */
     display: flex;
@@ -106,6 +189,7 @@ button{
     justify-content: space-between;
     opacity: 0;
     transition: all 1s;
+    top: 50px;
 }
 .side-planet-part{
     display: flex;
@@ -164,7 +248,6 @@ button{
     background-image: url("./img/company.png")
 }
 .list-part{
-    margin: 0px 75px 75px 75px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -175,6 +258,7 @@ button{
     border-radius: 20px;
     opacity: 0;
     transition: all 1s;
+    top: 100px;
 }
 .side-list{
     height: 100%;
@@ -196,6 +280,7 @@ button{
 .list-title{
     font-size: 20px;
     letter-spacing: 2px;
+    border-right: gold solid 1px;
 }
 .dream-total{
     border-radius: 3px;
@@ -220,6 +305,8 @@ button{
     color: white;
     opacity: 0;
     transition: all 1s;
+    top: 150px;
+    margin: 0px 0px 50px 0px;
 }
 .basic-info{
     width: 65%;
@@ -364,11 +451,12 @@ button{
     border:1px solid white;
     width: 20px;
     height: 20px;
-    right: 110%;
+    right: 150%;
     transition: all 2s linear;
     -webkit-transition: all 2s linear;
     animation: dreamBallSpin 2s linear;
     position: absolute;
+    overflow: hidden;
 }
 @keyframes dreamBallSpin{
     0%{
