@@ -106,17 +106,7 @@ function initDreams(){
                         event.target.disabled = true
                     }else{
                         if(document.getElementsByClassName('house-planet').length==0){
-                            if(document.getElementsByClassName('doctor-say')[0]){
-                                document.getElementsByClassName('doctor-say')[0].remove()
-                            }
-                            let State = createElement("DIV",{atrs:{
-                                style:"height:100px",
-                                className:"doctor-say",
-                                innerHTML:"北市一間 20 坪房平均約 1000 萬"
-                            }},document.getElementsByClassName("doctor-jacky-part")[0])
-                            setTimeout(function(){
-                                State.remove()
-                            },4000)  
+                            printVerbatim("北市一間 20 坪房平均約 1000 萬")
                         }
                         flyInToPlanet(event)
                         let chosenPlace = housePlace.pop()
@@ -131,17 +121,7 @@ function initDreams(){
                         event.target.disabled = true
                     }else{
                         if(document.getElementsByClassName('car-planet').length==0){
-                            if(document.getElementsByClassName('doctor-say')[0]){
-                                document.getElementsByClassName('doctor-say')[0].remove()
-                            }
-                            let State = createElement("DIV",{atrs:{
-                                style:"height:100px",
-                                className:"doctor-say",
-                                innerHTML:"基本的車款約 50 萬元"
-                            }},document.getElementsByClassName("doctor-jacky-part")[0])
-                            setTimeout(function(){
-                                State.remove()
-                            },4000)  
+                            printVerbatim("基本的車款約 50 萬元")
                         }
                         flyInToPlanet(event)
                         dreamShowUp("car")
@@ -155,17 +135,7 @@ function initDreams(){
                         event.target.disabled = true
                     }else{
                         if(document.getElementsByClassName('wedding-planet').length==0){
-                            if(document.getElementsByClassName('doctor-say')[0]){
-                                document.getElementsByClassName('doctor-say')[0].remove()
-                            }
-                            let State = createElement("DIV",{atrs:{
-                                style:"height:100px",
-                                className:"doctor-say",
-                                innerHTML:"一生一次一場難忘的婚禮大約花費 50 萬元"
-                            }},document.getElementsByClassName("doctor-jacky-part")[0])
-                            setTimeout(function(){
-                                State.remove()
-                            },4000)  
+                            printVerbatim("一生一次一場難忘的婚禮大約花費 50 萬元") 
                         }
                         flyInToPlanet(event)
                         let chosenPlace = weddingPlace.pop()
@@ -180,17 +150,7 @@ function initDreams(){
                         event.target.disabled = true
                     }else{
                         if(document.getElementsByClassName('kid-planet').length==0){
-                            if(document.getElementsByClassName('doctor-say')[0]){
-                                document.getElementsByClassName('doctor-say')[0].remove()
-                            }
-                            let State = createElement("DIV",{atrs:{
-                                style:"height:100px",
-                                className:"doctor-say",
-                                innerHTML:"一個小孩從出生到大學畢業平均花費 400 萬元"
-                            }},document.getElementsByClassName("doctor-jacky-part")[0])
-                            setTimeout(function(){
-                                State.remove()
-                            },4000)  
+                            printVerbatim("一個小孩從出生到大學畢業平均花費 400 萬元")
                         }
                         flyInToPlanet(event)
                         let chosenPlace = kidPlace.pop()
@@ -205,17 +165,7 @@ function initDreams(){
                         event.target.disabled = true
                     }else{
                         if(document.getElementsByClassName('parent-planet').length==0){
-                            if(document.getElementsByClassName('doctor-say')[0]){
-                                document.getElementsByClassName('doctor-say')[0].remove()
-                            }
-                            let State = createElement("DIV",{atrs:{
-                                style:"height:100px",
-                                className:"doctor-say",
-                                innerHTML:"預設的奉養費：一個月 5000 * 12 個月 * 40 年 = 24 萬元"
-                            }},document.getElementsByClassName("doctor-jacky-part")[0])
-                            setTimeout(function(){
-                                State.remove()
-                            },4000)  
+                            printVerbatim("預設的奉養費：一個月 5000 * 12 個月 * 40 年 = 24 萬元")
                         }
                         flyInToPlanet(event)
                         let chosenPlace = parentPlace.pop()
@@ -230,17 +180,7 @@ function initDreams(){
                         event.target.disabled = true
                     }else{
                         if(document.getElementsByClassName('plane-planet').length==0){
-                            if(document.getElementsByClassName('doctor-say')[0]){
-                                document.getElementsByClassName('doctor-say')[0].remove()
-                            }
-                            let State = createElement("DIV",{atrs:{
-                                style:"height:100px",
-                                className:"doctor-say",
-                                innerHTML:"預設的旅遊費：一個出遊 3 次 * 一次 2500元 * 60 年 = 45 萬元"
-                            }},document.getElementsByClassName("doctor-jacky-part")[0])
-                            setTimeout(function(){
-                                State.remove()
-                            },4000)  
+                            printVerbatim("預設的旅遊費：一個出遊 3 次 * 一次 2500元 * 60 年 = 45 萬元")
                         }
                         flyInToPlanet(event)
                         dreamShowUp("plane")
@@ -254,17 +194,7 @@ function initDreams(){
                         event.target.disabled = true
                     }else{
                         if(document.getElementsByClassName('retire-planet').length==0){
-                            if(document.getElementsByClassName('doctor-say')[0]){
-                                document.getElementsByClassName('doctor-say')[0].remove()
-                            }
-                            let State = createElement("DIV",{atrs:{
-                                style:"height:100px",
-                                className:"doctor-say",
-                                innerHTML:"預設理想的退休費：退休後每月生活費 20000 * 12 個月 * 20 年 = 480 萬元"
-                            }},document.getElementsByClassName("doctor-jacky-part")[0])
-                            setTimeout(function(){
-                                State.remove()
-                            },4000)  
+                            printVerbatim("預設理想的退休費：退休後每月生活費 20000 * 12 個月 * 20 年 = 480 萬元")
                         }
                         flyInToPlanet(event)
                         let chosenPlace = retirePlace.pop()
@@ -279,17 +209,7 @@ function initDreams(){
                         event.target.disabled = true
                     }else{
                         if(document.getElementsByClassName('company-planet').length==0){
-                            if(document.getElementsByClassName('doctor-say')[0]){
-                                document.getElementsByClassName('doctor-say')[0].remove()
-                            }
-                            let State = createElement("DIV",{atrs:{
-                                style:"height:100px",
-                                className:"doctor-say",
-                                innerHTML:"預設創業準備金： 100 萬元"
-                            }},document.getElementsByClassName("doctor-jacky-part")[0])
-                            setTimeout(function(){
-                                State.remove()
-                            },4000)  
+                            printVerbatim("預設創業準備金： 100 萬元")
                         }
                         flyInToPlanet(event)
                         let chosenPlace = companyPlace.pop()
