@@ -428,29 +428,72 @@ function startTest(){
 
         let newAge = parseInt(document.getElementsByClassName("age-ball-part")[0].children[order].innerHTML)
         let nowFortune = fortune + (newAge-age)*(salary - (cost*12))
-        console.log(nowFortune)
 
-        barChart.data.datasets[0].data = [dreamTotal,nowFortune]
-        barChart.update()
-
-        // newAge 會超過 retireAge
-        //pieChart.data.datasets[0].data = [newAge,retireAge - newAge,dieAge - retireAge]
-        //pieChart.update()
+        if(newAge <= (retireAge+10)){
+            barChart.data.datasets[0].data = [dreamTotal,nowFortune]
+            barChart.update()
+        }
+        
+        if(newAge<=retireAge){
+            pieChart.data.datasets[0].data = [newAge,retireAge - newAge,dieAge - retireAge]
+            pieChart.update()
+        }else if(newAge >= retireAge){
+            pieChart.data.datasets[0].data = [newAge,0,dieAge - newAge]
+            pieChart.update()
+        }else{
+            pieChart.data.datasets[0].data = [newAge,0,0]
+            pieChart.update()
+        }
 
         if(order == ageBalls.children.length -1){
-            let savingWord = '生日快樂！信箱裡寄來一封六年期的儲蓄險宣傳單，但硬漢機器人十分硬漢，他只將宣傳單記錄下來，不會做任何購買。'
+            // 第一步
+            let savingWord = '信箱裡寄來一封六年期的儲蓄險宣傳單，但硬漢機器人十分硬漢，他只將宣傳單記錄下來，不會做任何購買。'
             printVerbatim(savingWord)
+        }else if(order == 0){
+            // 最後一步
+            let finWord = '硬漢機器人度過了'+ (newAge - age) +'年，也到了機器人生的畢業典禮，謝謝機器人的付出。那麼星球診斷的結果吧！'
+            printVerbatim(finWord)
+        }else if(order == 1 && newAge >= 65){
+            let longWord = '雖然名為硬漢，但到了這個歲數，硬漢機器人仍然漸漸地無法自理生活而需要看護的幫助。但在金錢這個方面，硬漢機器人依舊十分硬漢，不花半點孔方兄。'
+            printVerbatim(longWord)
+        }else if(newAge >= retireAge && newAge < (retireAge+10)){
+            let retireWord = '退休了，硬漢機器人在家裡舒舒服服，享受回歸自由。(但同時也不再有收入了)'
+            printVerbatim(retireWord)
+        }else if(order == ageBalls.children.length -2){
+            let tripWord = '硬漢機器人到金門玩。出發前機場詢問是否需要旅行平安險，但硬漢機器人十分硬漢，他只將詢問記錄下來不做購買。回程時金門機場起了大霧，讓硬漢機器人在機場多待了一天。'
+            printVerbatim(tripWord)
+        }else if(order == ageBalls.children.length -3){
+            let sickWord = '這個夏天流感盛行，硬漢機器人的病情嚴重到需要住院了，但是健保病床全部爆滿，硬漢機器人只能自費醫院單人房，三天後醫師把硬漢機器人的螺絲鎖緊，硬漢機器人再度硬漢！'
+            printVerbatim(sickWord)
+        }else if(order == ageBalls.children.length -4){
+            let cancerWord = '今年的壓力特別大，硬漢機器人不幸的被診斷出了機器癌第一期 ( 在台灣每五分鐘就有一人罹癌 ) ，但硬漢機器人十分硬漢，經過兩年的療程，機器人順利完全康復了！'
+            printVerbatim(cancerWord)
+        }else if(order == ageBalls.children.length -5){
+            let catWord = '硬漢機器人騎著機車，眼看要撞上一隻在過馬路的貓咪，鐵漢柔情的他最後一刻閃開了貓咪但撞上了旁邊的奧迪。硬漢機器人沒有第三責任險，但硬漢機器人十分硬漢，不必付錢。'
+            printVerbatim(catWord)
+        }
+        
+        ageStage++
+
+        // 最後結果
+        let finalHandler = function(){
+
         }
 
-        ageStage++
         if(ageStage == ageBalls.children.length){
             document.getElementsByClassName("next-button")[0].remove()
+            let finalStage = createElement("BUTTON",{atrs:{
+                className:"next-button",
+                innerHTML:"診斷結果"
+            }},document.getElementsByClassName("next-stage-button-place")[0])
+            finalStage.addEventListener('click',finalHandler)
         }
     }
-
-    
+    window.scrollTo(0,0)
+    document.getElementsByClassName('test-button')[0].remove()
 
 }
+
 function dreamShowUp(dream){
     let amount = document.getElementsByClassName(dream+"-planet").length
     let newDream = createElement("DIV",{atrs:{

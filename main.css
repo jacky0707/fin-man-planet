@@ -1,6 +1,6 @@
 body{
     background: url("./img/space.png");
-    background-size:100vw 1500px;
+    background-size:100vw auto;
     margin:  0px;
     width: 100vw;
     background-attachment:fixed;
