@@ -95,136 +95,142 @@ function guideStep(step){
         break;
     }
 }
+let handler = function(event){
+    switch(event.target.id){
+        case "house":
+            if(document.getElementsByClassName('house-planet').length==5){
+                event.target.disabled = true
+            }else{
+                if(document.getElementsByClassName('house-planet').length==0){
+                    printVerbatim("北市一間 20 坪房平均約 1000 萬")
+                }
+                flyInToPlanet(event)
+                let chosenPlace = housePlace.pop()
+                dreamShowUp("house").style.transform = "rotate("+chosenPlace+"deg)"
+                addtoList("house")
+                let house = document.getElementsByName("house")[0].value
+                document.getElementsByName("house")[0].value = (parseInt(house) + 10000000) 
+            }
+            break;
+        case "car":
+            if(document.getElementsByClassName('car-planet').length==8){
+                event.target.disabled = true
+            }else{
+                if(document.getElementsByClassName('car-planet').length==0){
+                    printVerbatim("基本的車款約 50 萬元")
+                }
+                flyInToPlanet(event)
+                dreamShowUp("car")
+                addtoList("car")
+                let car = document.getElementsByName("car")[0].value
+                document.getElementsByName("car")[0].value = (parseInt(car) + 500000)
+            }
+            break;
+        case "wedding":
+            if(document.getElementsByClassName('wedding-planet').length==1){
+                event.target.disabled = true
+            }else{
+                if(document.getElementsByClassName('wedding-planet').length==0){
+                    printVerbatim("一生一次一場難忘的婚禮大約花費 50 萬元") 
+                }
+                flyInToPlanet(event)
+                let chosenPlace = weddingPlace.pop()
+                dreamShowUp("wedding").style.transform = "rotate("+chosenPlace+"deg)"
+                addtoList("wedding")
+                let wedding = document.getElementsByName("wedding")[0].value
+                document.getElementsByName("wedding")[0].value = (parseInt(wedding) + 500000)
+            }
+            break;
+        case "kid":
+            if(document.getElementsByClassName('kid-planet').length==10){
+                event.target.disabled = true
+            }else{
+                if(document.getElementsByClassName('kid-planet').length==0){
+                    printVerbatim("一個小孩從出生到大學畢業平均花費 400 萬元")
+                }
+                flyInToPlanet(event)
+                let chosenPlace = kidPlace.pop()
+                dreamShowUp("kid").style.transform = "rotate("+chosenPlace+"deg)"
+                addtoList("kid")
+                let kid = document.getElementsByName("kid")[0].value
+                document.getElementsByName("kid")[0].value = (parseInt(kid) + 4000000)
+            }
+            break;
+        case "parent":
+            if(document.getElementsByClassName('parent-planet').length==1){
+                event.target.disabled = true
+            }else{
+                if(document.getElementsByClassName('parent-planet').length==0){
+                    printVerbatim("預設的奉養費：一個月 5000 * 12 個月 * 40 年 = 240 萬元")
+                }
+                flyInToPlanet(event)
+                let chosenPlace = parentPlace.pop()
+                dreamShowUp("parent").style.transform = "rotate("+chosenPlace+"deg)"
+                addtoList("parent")
+                let parent = document.getElementsByName("parent")[0].value
+                document.getElementsByName("parent")[0].value = (parseInt(parent) + 240000)
+            }
+            break;
+        case "plane":
+            if(document.getElementsByClassName('plane-planet').length==1){
+                event.target.disabled = true
+            }else{
+                if(document.getElementsByClassName('plane-planet').length==0){
+                    printVerbatim("預設的旅遊費：一年出遊 3 次 * 一次 2500元 * 60 年 = 45 萬元")
+                }
+                flyInToPlanet(event)
+                dreamShowUp("plane")
+                addtoList("plane")
+                let plane = document.getElementsByName("plane")[0].value
+                document.getElementsByName("plane")[0].value = (parseInt(plane) + 450000)
+            }
+            break;
+        case "retire":
+            if(document.getElementsByClassName('retire-planet').length==1){
+                event.target.disabled = true
+            }else{
+                if(document.getElementsByClassName('retire-planet').length==0){
+                    printVerbatim("預設理想的退休費：退休後每月生活費 20000 * 12 個月 * 20 年 = 480 萬元")
+                }
+                flyInToPlanet(event)
+                let chosenPlace = retirePlace.pop()
+                dreamShowUp("retire").style.transform = "rotate("+chosenPlace+"deg)"
+                addtoList("retire")
+                let retire = document.getElementsByName("retire")[0].value
+                document.getElementsByName("retire")[0].value = (parseInt(retire) + 4800000)
+            }
+            break;
+        case "company":
+            if(document.getElementsByClassName('company-planet').length==3){
+                event.target.disabled = true
+            }else{
+                if(document.getElementsByClassName('company-planet').length==0){
+                    printVerbatim("預設創業準備金： 100 萬元")
+                }
+                flyInToPlanet(event)
+                let chosenPlace = companyPlace.pop()
+                dreamShowUp("company").style.transform = "rotate("+chosenPlace+"deg)"
+                addtoList("company")
+                let company = document.getElementsByName("company")[0].value
+                document.getElementsByName("company")[0].value = (parseInt(company) + 1000000)
+            }
+            break;
+    }
+}
 function initDreams(){
     let numberOfDreams = document.getElementsByClassName('dream-button').length
     for(dream=0;dream<numberOfDreams;dream++){
         let dreamElement = document.getElementsByClassName('dream-button')[dream]
-        let handler = function(event){
-            switch(event.target.id){
-                case "house":
-                    if(document.getElementsByClassName('house-planet').length==5){
-                        event.target.disabled = true
-                    }else{
-                        if(document.getElementsByClassName('house-planet').length==0){
-                            printVerbatim("北市一間 20 坪房平均約 1000 萬")
-                        }
-                        flyInToPlanet(event)
-                        let chosenPlace = housePlace.pop()
-                        dreamShowUp("house").style.transform = "rotate("+chosenPlace+"deg)"
-                        addtoList("house")
-                        let house = document.getElementsByName("house")[0].value
-                        document.getElementsByName("house")[0].value = (parseInt(house) + 10000000) 
-                    }
-                    break;
-                case "car":
-                    if(document.getElementsByClassName('car-planet').length==8){
-                        event.target.disabled = true
-                    }else{
-                        if(document.getElementsByClassName('car-planet').length==0){
-                            printVerbatim("基本的車款約 50 萬元")
-                        }
-                        flyInToPlanet(event)
-                        dreamShowUp("car")
-                        addtoList("car")
-                        let car = document.getElementsByName("car")[0].value
-                        document.getElementsByName("car")[0].value = (parseInt(car) + 500000)
-                    }
-                    break;
-                case "wedding":
-                    if(document.getElementsByClassName('wedding-planet').length==1){
-                        event.target.disabled = true
-                    }else{
-                        if(document.getElementsByClassName('wedding-planet').length==0){
-                            printVerbatim("一生一次一場難忘的婚禮大約花費 50 萬元") 
-                        }
-                        flyInToPlanet(event)
-                        let chosenPlace = weddingPlace.pop()
-                        dreamShowUp("wedding").style.transform = "rotate("+chosenPlace+"deg)"
-                        addtoList("wedding")
-                        let wedding = document.getElementsByName("wedding")[0].value
-                        document.getElementsByName("wedding")[0].value = (parseInt(wedding) + 500000)
-                    }
-                    break;
-                case "kid":
-                    if(document.getElementsByClassName('kid-planet').length==10){
-                        event.target.disabled = true
-                    }else{
-                        if(document.getElementsByClassName('kid-planet').length==0){
-                            printVerbatim("一個小孩從出生到大學畢業平均花費 400 萬元")
-                        }
-                        flyInToPlanet(event)
-                        let chosenPlace = kidPlace.pop()
-                        dreamShowUp("kid").style.transform = "rotate("+chosenPlace+"deg)"
-                        addtoList("kid")
-                        let kid = document.getElementsByName("kid")[0].value
-                        document.getElementsByName("kid")[0].value = (parseInt(kid) + 4000000)
-                    }
-                    break;
-                case "parent":
-                    if(document.getElementsByClassName('parent-planet').length==1){
-                        event.target.disabled = true
-                    }else{
-                        if(document.getElementsByClassName('parent-planet').length==0){
-                            printVerbatim("預設的奉養費：一個月 5000 * 12 個月 * 40 年 = 24 萬元")
-                        }
-                        flyInToPlanet(event)
-                        let chosenPlace = parentPlace.pop()
-                        dreamShowUp("parent").style.transform = "rotate("+chosenPlace+"deg)"
-                        addtoList("parent")
-                        let parent = document.getElementsByName("parent")[0].value
-                        document.getElementsByName("parent")[0].value = (parseInt(parent) + 240000)
-                    }
-                    break;
-                case "plane":
-                    if(document.getElementsByClassName('plane-planet').length==1){
-                        event.target.disabled = true
-                    }else{
-                        if(document.getElementsByClassName('plane-planet').length==0){
-                            printVerbatim("預設的旅遊費：一個出遊 3 次 * 一次 2500元 * 60 年 = 45 萬元")
-                        }
-                        flyInToPlanet(event)
-                        dreamShowUp("plane")
-                        addtoList("plane")
-                        let plane = document.getElementsByName("plane")[0].value
-                        document.getElementsByName("plane")[0].value = (parseInt(plane) + 450000)
-                    }
-                    break;
-                case "retire":
-                    if(document.getElementsByClassName('retire-planet').length==1){
-                        event.target.disabled = true
-                    }else{
-                        if(document.getElementsByClassName('retire-planet').length==0){
-                            printVerbatim("預設理想的退休費：退休後每月生活費 20000 * 12 個月 * 20 年 = 480 萬元")
-                        }
-                        flyInToPlanet(event)
-                        let chosenPlace = retirePlace.pop()
-                        dreamShowUp("retire").style.transform = "rotate("+chosenPlace+"deg)"
-                        addtoList("retire")
-                        let retire = document.getElementsByName("retire")[0].value
-                        document.getElementsByName("retire")[0].value = (parseInt(retire) + 4800000)
-                    }
-                    break;
-                case "company":
-                    if(document.getElementsByClassName('company-planet').length==3){
-                        event.target.disabled = true
-                    }else{
-                        if(document.getElementsByClassName('company-planet').length==0){
-                            printVerbatim("預設創業準備金： 100 萬元")
-                        }
-                        flyInToPlanet(event)
-                        let chosenPlace = companyPlace.pop()
-                        dreamShowUp("company").style.transform = "rotate("+chosenPlace+"deg)"
-                        addtoList("company")
-                        let company = document.getElementsByName("company")[0].value
-                        document.getElementsByName("company")[0].value = (parseInt(company) + 1000000)
-                    }
-                    break;
-            }
-        }
+        
         dreamElement.addEventListener("mousedown",handler)
     } 
 }
 function startTest(){
+    let numberOfDreams = document.getElementsByClassName('dream-button').length
+    for(dream=0;dream<numberOfDreams;dream++){
+        let dreamElement = document.getElementsByClassName('dream-button')[dream]
+        dreamElement.removeEventListener("mousedown",handler)
+    } 
     let testPart = document.getElementsByClassName("test-part")[0]
     testPart.style.height = "400px";
     testPart.style.boxShadow = "0px 0px 3px 3px greenyellow"
@@ -259,7 +265,7 @@ function startTest(){
             className:"next-button",
             innerHTML:"下一階段"
         }},document.getElementsByClassName("next-stage-button-place")[0])
-        nextStage.addEventListener('click',handler)
+        nextStage.addEventListener('click',nextHandler)
     },9000)
     setTimeout(function(){
         document.getElementsByClassName("saying")[0].innerHTML =""
@@ -316,7 +322,7 @@ function startTest(){
                     yAxes:[{
                         ticks:{
                             fontColor:"rgb(255,215,0)",
-                            fontSize: 12
+                            fontSize: 14
                         }
                     }],
                     xAxes:[{
@@ -336,7 +342,8 @@ function startTest(){
         }},document.getElementsByClassName("age-ball-part")[0])
     }
     
-    let handler = function(){
+    let nextHandler = function(){
+        let moneyDetailPart = document.getElementsByClassName('money-detail-part')[0]
         let ageBalls = document.getElementsByClassName('age-ball-part')[0]
         let order = ageBalls.children.length - ageStage -1
         let outsideWidth = (document.body.clientWidth - document.getElementsByClassName('test-part')[0].offsetWidth)/2
@@ -347,8 +354,13 @@ function startTest(){
         robot.style.left = (statePositionX - outsideWidth - 9) + "px"
 
         let newAge = parseInt(document.getElementsByClassName("age-ball-part")[0].children[order].innerHTML)
-        let nowFortune = fortune + (newAge-age)*(salary - (cost*12))
-
+        let nowFortune
+        if(newAge <=(retireAge)){
+            nowFortune = fortune + (newAge-age)*(salary - (cost*12))
+        }else{
+            nowFortune = fortune + (retireAge-age)*(salary - (cost*12))
+        }
+        
         if(newAge <= (retireAge+10)){
             barChart.data.datasets[0].data = [dreamTotal,nowFortune]
             barChart.update()
@@ -365,39 +377,143 @@ function startTest(){
             pieChart.update()
         }
 
+        let saveIncome = [27,29,31,34,37,40,44,48,52,57]
+        if(document.getElementsByClassName('money-detail')[0]){
+            document.getElementsByClassName('money-detail')[0].innerHTML = "支出 <br> 25萬 <br> 收入 <br>"+saveIncome[ageStage-1]+"萬"
+        }
+
+        let moneyWidth = (805/ageBalls.children.length)
         if(order == ageBalls.children.length -1){
             // 第一步
-            let savingWord = '信箱裡寄來一封六年期的儲蓄險宣傳單，但硬漢機器人十分硬漢，他只將宣傳單記錄下來，不會做任何購買。'
+            let savingWord = '信箱裡寄來一封六年期，每年五萬保費的儲蓄險宣傳單，但硬漢機器人十分硬漢，他只將宣傳單記錄下來，不會做任何購買。'
             printVerbatim(savingWord)
+            let savingDiv = createElement("DIV",{atrs:{
+                className:"money-detail"
+            }},moneyDetailPart)
+            savingDiv.style.width = moneyWidth+"px"
+            savingDiv.innerHTML = "支出 <br> 0萬 <br> 收入 <br> 0萬"
         }else if(order == 0){
             // 最後一步
             let finWord = '硬漢機器人度過了'+ (newAge - age) +'年，也到了機器人生的畢業典禮，謝謝機器人的付出。那麼星球診斷的結果吧！'
             printVerbatim(finWord)
+            let finDiv = createElement("DIV",{atrs:{
+                className:"money-detail"
+            }},moneyDetailPart)
+            finDiv.style.width = moneyWidth+"px"
+            finDiv.innerHTML = "謝謝付出"
         }else if(order == 1 && newAge >= 65){
             let longWord = '雖然名為硬漢，但到了這個歲數，硬漢機器人仍然漸漸地無法自理生活而需要看護的幫助。但在金錢這個方面，硬漢機器人依舊十分硬漢，不花半點孔方兄。'
             printVerbatim(longWord)
+            let longDiv = createElement("DIV",{atrs:{
+                className:"money-detail"
+            }},moneyDetailPart)
+            longDiv.style.width = moneyWidth+"px"
+            longDiv.innerHTML = "支出 <br> ２萬(外勞)/5萬(台灣) <br>* 12個月 <br>* 平均十年 <br>= 240 萬 / 600 萬"
         }else if(newAge >= retireAge && newAge < (retireAge+10)){
             let retireWord = '退休了，硬漢機器人在家裡舒舒服服，享受回歸自由。(但同時也不再有收入了)'
             printVerbatim(retireWord)
+            let retireDiv = createElement("DIV",{atrs:{
+                className:"money-detail"
+            }},moneyDetailPart)
+            retireDiv.style.width = moneyWidth+"px"
+            retireDiv.innerHTML = "支出<br>0 萬"
         }else if(order == ageBalls.children.length -2){
             let tripWord = '硬漢機器人到金門玩。出發前機場詢問是否需要旅行平安險，但硬漢機器人十分硬漢，他只將詢問記錄下來不做購買。回程時金門機場起了大霧，讓硬漢機器人在機場多待了一天。'
             printVerbatim(tripWord)
+            let tripDiv = createElement("DIV",{atrs:{
+                className:"money-detail"
+            }},moneyDetailPart)
+            tripDiv.style.width = moneyWidth+"px"
+            tripDiv.innerHTML = "支出<br> 100 <br> 收入 <br> 3000 "
         }else if(order == ageBalls.children.length -3){
             let sickWord = '這個夏天流感盛行，硬漢機器人的病情嚴重到需要住院了，但是健保病床全部爆滿，硬漢機器人只能自費醫院單人房，三天後醫師把硬漢機器人的螺絲鎖緊，硬漢機器人再度硬漢！'
             printVerbatim(sickWord)
+            let sickDiv = createElement("DIV",{atrs:{
+                className:"money-detail"
+            }},moneyDetailPart)
+            sickDiv.style.width = moneyWidth+"px"
+            sickDiv.innerHTML = "支出<br> 病床一日5000 <br> * 3 日 <br> = 15000"
         }else if(order == ageBalls.children.length -4){
             let cancerWord = '今年的壓力特別大，硬漢機器人不幸的被診斷出了機器癌第一期 ( 在台灣每五分鐘就有一人罹癌 ) ，但硬漢機器人十分硬漢，經過兩年的療程，機器人順利完全康復了！'
             printVerbatim(cancerWord)
+            let cancerDiv = createElement("DIV",{atrs:{
+                className:"money-detail"
+            }},moneyDetailPart)
+            cancerDiv.style.width = moneyWidth+"px"
+            cancerDiv.innerHTML = "支出 <br>一年 80 萬 <br> * 2 年 <br> =160 萬"
         }else if(order == ageBalls.children.length -5){
             let catWord = '硬漢機器人騎著機車，眼看要撞上一隻在過馬路的貓咪，鐵漢柔情的他最後一刻閃開了貓咪但撞上了旁邊的奧迪。硬漢機器人沒有第三責任險，但硬漢機器人十分硬漢，不必付錢。'
             printVerbatim(catWord)
+            let catDiv = createElement("DIV",{atrs:{
+                className:"money-detail"
+            }},moneyDetailPart)
+            catDiv.style.width = moneyWidth+"px"
+            catDiv.innerHTML = "支出<br>50 萬"
+        }else{
+            printVerbatim("")
+            let noDiv = createElement("DIV",{atrs:{
+                className:"money-detail"
+            }},moneyDetailPart)
+            noDiv.style.width = moneyWidth+"px"
+            noDiv.innerHTML = "風平浪靜"
         }
         
         ageStage++
 
         // 最後結果
         let finalHandler = function(){
+            let result={}
+            if(nowFortune<dreamTotal){
+                result.type="入<br>不<br>敷<br>出"
+                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入不敷夢想的支出。這顆星球無法在這樣的收入情況下，完成星球中的夢想<br><br>參考處方籤：(1)增加收入(2)減少夢想價值"
+                result.summary=""
+            }else if(nowFortune >= dreamTotal && nowFortune < (dreamTotal+30000000)){
+                result.type="精<br>益<br>求<br>精"
+                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入足以負擔夢想價值。"
+                result.summary=""
+            }else{
+                console.log(dreamTotal)
+                result.type="無<br>所<br>畏<br>懼"
+                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入爆表，財力驚人。"
+                result.summary=""
+            }
+            
+            
 
+
+            let finalReport = createElement("DIV",{atrs:{
+                className:"final-report"
+            }},document.getElementsByTagName('body')[0])
+
+            let finalReportContent = createElement("DIV",{atrs:{
+                className:"final-report-content"
+            }},finalReport)
+
+            let finalTitle = createElement("DIV",{atrs:{
+                className:"final-title",
+                innerHTML:"診斷結果"
+            }},finalReportContent)
+
+            let finalContent = createElement("DIV",{atrs:{
+                className:"final-content",
+            }},finalReportContent)
+
+            let finalContentType = createElement("DIV",{atrs:{
+                className:"final-content-type",
+                innerHTML:result.type
+            }},finalContent)
+
+            let finalContentTypeDiscript = createElement("DIV",{atrs:{
+                className:"final-content-type-discript",
+                innerHTML:result.typeDiscript
+            }},finalContent)
+
+            let finalContentSummary= createElement("DIV",{atrs:{
+                className:"final-content-type-summary",
+                innerHTML:result.summary
+            }},finalReportContent)
+
+            
         }
 
         if(ageStage == ageBalls.children.length){
@@ -408,10 +524,28 @@ function startTest(){
             }},document.getElementsByClassName("next-stage-button-place")[0])
             finalStage.addEventListener('click',finalHandler)
         }
+        
     }
     window.scrollTo(0,0)
-    document.getElementsByClassName('test-button')[0].remove()
+    document.getElementsByClassName('test-button')[0].disabled=true
+    document.getElementsByClassName('test-button')[0].innerHTML="星球總價<br>"+dreamTotal
 
+    let inputNum = document.getElementsByClassName("dream-total").length-1
+    for(inputNum;inputNum >= 0; inputNum--){
+        let inputValue = document.getElementsByClassName("dream-total")[inputNum].value
+        document.getElementsByClassName("dream-total")[inputNum].remove()
+        if(inputNum > 7){
+            createElement("DIV",{atrs:{
+                className:"dream-total-div",
+                innerHTML:inputValue
+            }},document.getElementsByClassName("basic-item")[inputNum-8])
+        }else{
+            createElement("DIV",{atrs:{
+                className:"dream-total-div",
+                innerHTML:inputValue
+            }},document.getElementsByClassName("list-item")[inputNum])
+        }
+    }
 }
 
 function dreamShowUp(dream){
