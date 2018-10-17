@@ -1,12 +1,81 @@
+let observeRobot
 function skip(){
-    guideStep(3.4)
-    document.getElementsByClassName("doctor")[0].style.opacity = 1
-    document.getElementsByClassName("black-background")[0].style.background = "rgba(0,0,0,0)"
-    document.getElementsByClassName('planet-part')[0].style.opacity = 1;
-    document.getElementsByClassName("list-part")[0].style.opacity = 1
-    document.getElementsByClassName("basic-information-part")[0].style.opacity = 1
-    document.getElementsByClassName('next-button')[0].remove()
+    let skipButton = document.getElementById('skip-button')
+    if(document.getElementsByClassName('test-part')[0].style.height){
+        if(teach){
+            skipButton.disabled = true
+            skipButton.style.background="gray"
+            let nextStage = document.getElementById('next')
+            nextStage.disabled = true
+            nextStage.style.background = "gray"
+            setTimeout(function(){
+                nextStage.style.background="transparent"
+                nextStage.disabled = false
+                skipButton.style.background="transparent"
+                skipButton.disabled = false
+            },9000)
+            let testTalk2 = "硬漢機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，唯一不同的是：硬漢機器人十分硬漢，周圍發生的一切都不會影響他的資產。" 
+            printVerbatim(testTalk2)
+            let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察硬漢機器人的機器人生囉！"
+            observeRobot = setTimeout(function(){
+                printVerbatim(testTalk3)
+            },5000)
+        }
+    }else{
+        if(teach){
+            skipButton.disabled = true
+            skipButton.style.background="gray"
+            setTimeout(function(){
+                skipButton.style.background="transparent"
+                skipButton.disabled = false
+            },3000)
+            guideStep(3.1)
+            document.getElementsByClassName('next-button')[0].innerHTML = "關<br>閉<br>教<br>學"
+            teach = false
+        }else{
+            skipButton.style.background="gray"
+            skipButton.disabled = true
+            setTimeout(function(){
+                skipButton.style.background="transparent"
+                skipButton.disabled = false
+            },3000)
+            guideStep(3.4)
+            document.getElementsByClassName("doctor")[0].style.opacity = 1
+            document.getElementsByClassName("black-background")[0].style.background = "rgba(0,0,0,0)"
+            document.getElementsByClassName('planet-part')[0].style.opacity = 1;
+            document.getElementsByClassName("list-part")[0].style.opacity = 1
+            document.getElementsByClassName("basic-information-part")[0].style.opacity = 1
+            document.getElementsByClassName('next-button')[0].innerHTML = "開<br>啟<br>教<br>學"
+            teach = true
+            clearTimeOuts()
+        }
+    }
 }
+function clearTimeOuts(){
+    clearTimeout(oneWordByOneWord)
+    clearTimeout(step0)
+    clearTimeout(step1)
+    clearTimeout(step1_1)
+    clearTimeout(step1_2)
+    clearTimeout(step2_0)
+    clearTimeout(step3_0)
+    clearTimeout(step3_1)
+    clearTimeout(step3_2)
+    clearTimeout(step3_3)
+}
+
+let step0
+let step1
+let step1_1
+let step1_2
+let step2_0
+let step3_0
+let step3_1
+let step3_2
+let step3_3
+let step3_4
+let oneWordByOneWord
+
 function guideStep(step){
     let doctor = document.getElementsByClassName("doctor")[0]
     let bb = document.getElementsByClassName("black-background")[0]
@@ -15,7 +84,7 @@ function guideStep(step){
     switch(step){
         case 0:
         doctor.style.opacity = 1
-        setTimeout(function(){
+        step0 = setTimeout(function(){
             guideStep(1)
         },1500)
         break;
@@ -24,7 +93,7 @@ function guideStep(step){
         let welcomeWords = "歡迎來到『理財宇宙』，我是星球醫生阿傑。"
         printVerbatim(welcomeWords)
         let saying = document.getElementsByClassName("saying")[0]
-        setTimeout(function(){
+        step1 = setTimeout(function(){
             guideStep(1.1)
         },3500)
         break;
@@ -32,14 +101,14 @@ function guideStep(step){
         case 1.1:
         let myFaultwords = "你沒看到宇宙？？喔...抱歉我的錯。"
         printVerbatim(myFaultwords)
-        setTimeout(function(){
+        step1_1 = setTimeout(function(){
             guideStep(1.2)
         },2000)
         break;
 
         case 1.2:
         bb.style.background = "rgba(0,0,0,0)"
-        setTimeout(function(){
+        step1_2 = setTimeout(function(){
             guideStep(2.0)
         },2000)
         break;
@@ -47,22 +116,22 @@ function guideStep(step){
         case 2.0:
         let showPlanetWords = "如剛剛所說，我是個醫生，專門診斷宇宙間各顆星球的問題。我先送你一顆，再跟你說明。"
         printVerbatim(showPlanetWords)
-        setTimeout(function(){
+        step2_0 = setTimeout(function(){
             guideStep(3.0)
         },3000)
         break;
 
         case 3.0:
         planetPart.style.opacity = 1;
-        setTimeout(function(){
+        step3_0 = setTimeout(function(){
             guideStep(3.1)
         },1500)
         break;
 
         case 3.1:
-        let ableToClickWords = "很漂亮吧！之後你可以點選星球周圍各種使你人生更豐富圓滿的元素，他們便會出現在你的星球中。"
+        let ableToClickWords = "星球很漂亮吧！之後你可以點選星球周圍各種使你人生更豐富圓滿的元素，他們便會出現在你的星球中。"
         printVerbatim(ableToClickWords)
-        setTimeout(function(){
+        step3_1 = setTimeout(function(){
             guideStep(3.2)
         },3500)
         break;
@@ -71,7 +140,7 @@ function guideStep(step){
         let ableToAdjustWords = "同時，加入後的元素可以調整成你真正希望他所應該擁有的價值。"
         printVerbatim(ableToAdjustWords)
         document.getElementsByClassName("list-part")[0].style.opacity = 1
-        setTimeout(function(){
+        step3_2 = setTimeout(function(){
             guideStep(3.3)
         },3500)
         break;
@@ -80,7 +149,7 @@ function guideStep(step){
         let basicInfoWords = "在按下最下面的診斷前的最後一步，請填入框框裡的基本資料，對你的生活狀況越清楚，診斷書的內容就會越詳細喔。"
         printVerbatim(basicInfoWords)
         document.getElementsByClassName("basic-information-part")[0].style.opacity = 1
-        setTimeout(function(){
+        step3_3 = setTimeout(function(){
             guideStep(3.4)
         },4500)
         break;
@@ -89,8 +158,10 @@ function guideStep(step){
         let getStartWords = "現在就開始嘗試把夢想加入星球吧！"
         printVerbatim(getStartWords)
         initDreams()
-        setTimeout(function(){
+        step3_4 = setTimeout(function(){
             document.getElementsByClassName("saying")[0].innerHTML =""
+            document.getElementsByClassName('next-button')[0].innerHTML = "開<br>啟<br>教<br>學"
+            teach = true
         },3000)
         break;
     }
@@ -226,6 +297,16 @@ function initDreams(){
     } 
 }
 function startTest(){
+    teach = true
+    let skipButton = document.getElementById('skip-button')
+    skipButton.innerHTML = "開<br>啟<br>教<br>學"
+    skipButton.disabled = true
+    skipButton.style.background="gray"
+    setTimeout(function(){
+        skipButton.style.background="transparent"
+        skipButton.disabled = false
+    },9000)
+
     let numberOfDreams = document.getElementsByClassName('dream-button').length
     for(dream=0;dream<numberOfDreams;dream++){
         let dreamElement = document.getElementsByClassName('dream-button')[dream]
@@ -253,20 +334,20 @@ function startTest(){
 
     let dreamTotal = house+car+wedding+kid+parent+plane+retire+company
     let testTalk1 = "這星球價值 "+ dreamTotal +" 元呢...... 好的，那現在讓我派出硬漢機器人來嘗試為你打造出這顆星球吧！"
-    printVerbatim(testTalk1)
+    setTimeout(function(){
+        printVerbatim(testTalk1)
+    },2000)
     let testTalk2 = "硬漢機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，唯一不同的是：硬漢機器人十分硬漢，周圍發生的一切都不會影響他的資產。" 
     setTimeout(function(){
         printVerbatim(testTalk2)
-    },3500)
+    },6500)
     let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察硬漢機器人的機器人生囉！"
     setTimeout(function(){
         printVerbatim(testTalk3)
-        let nextStage = createElement("BUTTON",{atrs:{
-            className:"next-button",
-            innerHTML:"下一階段"
-        }},document.getElementsByClassName("next-stage-button-place")[0])
+        let nextStage = document.getElementById('next')
+        nextStage.style.display = "block"
         nextStage.addEventListener('click',nextHandler)
-    },9000)
+    },11000)
     setTimeout(function(){
         document.getElementsByClassName("saying")[0].innerHTML =""
     },1100)
@@ -343,10 +424,15 @@ function startTest(){
     }
     
     let nextHandler = function(){
+        let skipButton = document.getElementById('skip-button')
+        let nextStage = document.getElementById('next')
         let moneyDetailPart = document.getElementsByClassName('money-detail-part')[0]
         let ageBalls = document.getElementsByClassName('age-ball-part')[0]
         let order = ageBalls.children.length - ageStage -1
         let outsideWidth = (document.body.clientWidth - document.getElementsByClassName('test-part')[0].offsetWidth)/2
+        
+        
+       
         
         statePositionX = getPosition(document.getElementsByClassName("age-ball-part")[0].children[order]).x
         
@@ -394,7 +480,7 @@ function startTest(){
             savingDiv.innerHTML = "支出 <br> 0萬 <br> 收入 <br> 0萬"
         }else if(order == 0){
             // 最後一步
-            let finWord = '硬漢機器人度過了'+ (newAge - age) +'年，也到了機器人生的畢業典禮，謝謝機器人的付出。那麼星球診斷的結果吧！'
+            let finWord = '硬漢機器人度過了'+ (newAge - age) +'年，也到了機器人生的畢業典禮，謝謝機器人的付出。那麼來看看星球診斷的結果吧！'
             printVerbatim(finWord)
             let finDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
@@ -457,10 +543,6 @@ function startTest(){
             noDiv.style.width = moneyWidth+"px"
             noDiv.innerHTML = "風平浪靜"
         }
-        
-        ageStage++
-
-        // 最後結果
         let finalHandler = function(){
             let result={}
             if(nowFortune<dreamTotal){
@@ -515,15 +597,34 @@ function startTest(){
 
             
         }
-
+        ageStage++
         if(ageStage == ageBalls.children.length){
-            document.getElementsByClassName("next-button")[0].remove()
-            let finalStage = createElement("BUTTON",{atrs:{
-                className:"next-button",
-                innerHTML:"診斷結果"
-            }},document.getElementsByClassName("next-stage-button-place")[0])
+            document.getElementById("next").remove()
+            document.getElementById("skip-button").disabled=true
+            document.getElementById("skip-button").style.background = "gray"
+            let finalStage = document.createElement("BUTTON")
+            finalStage.classList.add("next-button")
+            finalStage.innerHTML = "診<br>斷<br>結<br>果"
+
+            let insertPlace = document.getElementsByClassName("next-stage-button-place")[0]
+            insertPlace.insertBefore(finalStage,insertPlace.childNodes[2])
+
             finalStage.addEventListener('click',finalHandler)
+        }else{
+            clearTimeOuts()
+            
+            nextStage.disabled = true
+            nextStage.style.background = "gray"
+            skipButton.disabled = true
+            skipButton.style.background="gray"
+            setTimeout(function(){
+                nextStage.style.background="transparent"
+                nextStage.disabled = false
+                skipButton.style.background="transparent"
+                skipButton.disabled = false
+            },4000)
         }
+        // 最後結果
         
     }
     window.scrollTo(0,0)
@@ -606,10 +707,11 @@ function printVerbatim(words){
     let saying = document.getElementsByClassName("saying")[0]
     saying.innerHTML = ""
     for(let wordsNum = 0;wordsNum<=words.length;wordsNum++){      
-        setTimeout(function(){
+        oneWordByOneWord = setTimeout(function(){
             saying.innerHTML = words.substr(0,wordsNum)
         },50*wordsNum)
     }
+    
 }
 function flyInToPlanet(event){
     //按鈕座標

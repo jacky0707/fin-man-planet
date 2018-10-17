@@ -15,8 +15,21 @@
 
             let ageStage = 0
             let step = 0
+            let teach = false
             function onloadFunc(){
                 guideStep(step)
+                let barWidth = document.getElementsByClassName("bar-part")[0].offsetWidth
+                let barHeight = document.getElementsByClassName("bar-part")[0].offsetHeight
+                let canvasBar = document.getElementById("bar")
+                canvasBar.width = barWidth
+                canvasBar.height = barHeight
+                
+                let pieWidth = document.getElementsByClassName("pie-part")[0].offsetWidth
+                let pieHeight = document.getElementsByClassName("pie-part")[0].offsetHeight
+                let canvasPie = document.getElementById("pie")
+                canvasPie.width = barWidth
+                canvasPie.height = barHeight
+                 
             }
         </script>
         <script src="./main.js"></script>
@@ -28,7 +41,9 @@
             <div class="content">
                 <div class="doctor-part big-part">
                     <div class="next-stage-button-place">
-                        <button class="next-button" onclick="skip()">跳過教學</button>
+                        <button class="next-button" id="skip-button" onclick="skip()">關<br>閉<br>教<br>學</button>
+                        <button class="next-button none-next" id="next">下<br>一<br>階<br>段</button>
+                        <button class="next-button" id="contact">聯<br>絡<br>阿<br>傑</button>
                     </div>
                     <div class="doctor-place">
                         <div class="doctor"></div>
@@ -40,10 +55,10 @@
                 <div class="test-part big-part">
                     <div class="chart-part">
                         <div class="bar-part">
-                            <canvas id="bar" height="60"></canvas>
+                            <canvas id="bar"></canvas>
                         </div>
                         <div class="pie-part">
-                            <canvas id="pie" height="140"></canvas>
+                            <canvas id="pie"></canvas>
                         </div>
                     </div>
                     <div class="age-part">

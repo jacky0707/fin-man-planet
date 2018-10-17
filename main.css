@@ -90,10 +90,27 @@ button{
         height: 130px;
         width: 70%;
     }
+    .list-title{
+        font-size: 20px;
+        letter-spacing: 2px;
+        border-right: gold solid 1px;
+    }
+    .basic-item{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 14px;
+    }
 }
 @media screen and (max-width: 1000px) and (min-width: 600px){
     .content{
         width: 500px;
+    }
+    .list-title{
+        font-size: 12px;
+        letter-spacing: 2px;
+        border-right: gold solid 1px;
     }
     
 }
@@ -210,16 +227,19 @@ button{
 .next-stage-button-place{
     width: 20%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .next-button{
-    height: 50px;
-    width: 75px;
+    height: auto;
+    width: 25%;
     color: white;
     background: black;
     border-radius: 10px;
     border:1px solid white
+}
+.none-next{
+    display: none;
 }
 .doctor-place{
     width: 30%;
@@ -347,11 +367,7 @@ button{
     position: relative;
     width: 60%;
 }
-.list-title{
-    font-size: 20px;
-    letter-spacing: 2px;
-    border-right: gold solid 1px;
-}
+
 .dream-total{
     border-radius: 3px;
     text-align: center;
@@ -396,13 +412,7 @@ button{
     background: transparent;
     color: white;
 }
-.basic-item{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 14px;
-}
+
 .adding-dream{
     width: 100px;
     height: 100px;
