@@ -1,9 +1,11 @@
 body{
     background: url("./img/space.png");
-    background-size:100vw auto;
+    background-size:100% 1500px;
     margin:  0px;
     width: 100vw;
     background-attachment:fixed;
+    display: flex;
+    justify-content:center;
 }
 button{
     outline:none;
@@ -12,7 +14,7 @@ button{
     background: rgba(0,0,0,1);
     transition: 1.5s;
     width: 100%;
-    height: 1500px;
+    height: 1750px;
     display: flex;
     flex-direction: column;
     align-items: center;
