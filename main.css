@@ -139,7 +139,7 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    height: 32%;
+    height: 37%;
     width: 100%;
 }
 .bar-part{
@@ -197,7 +197,7 @@ button{
     justify-content: flex-end;
     flex-direction: row;
     align-items: center;
-    height: 50%;
+    height: 45%;
     width: 100%;
 }
 .money-detail-part{
@@ -208,6 +208,15 @@ button{
     left: calc( 5% + 50px );
     height: 100%;
     width: calc( 95% - 50px);
+}
+.cost-des{
+    background: url("./img/costDes.png");
+    background-position: center;
+    border-radius: 50%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
 }
 .money-detail{
     height: 100%;
@@ -263,14 +272,21 @@ button{
     width: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+    position: relative;  
+    background: url('./img/talk.png') black;
+    background-size: 100% 100%;
 }
 .saying{
-    width: 80%;
+    width: 82%;
+    height: 85%;
+    left: 11%;
     color: white;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+    position: absolute;
+    background: black;
 }
 
 .planet-part{
@@ -316,28 +332,140 @@ button{
     }
 }
 #house{
+    position: relative;
     background-image: url("./img/house.png")
 }
+#house:hover::after{/*小螢幕用 active */
+    position: absolute;
+    display: block;
+    left: 0px;
+    height: 20px;
+    width: 60px;
+    font-size: 16px;
+    background: white;
+    color: black;
+    content: "房子";
+    top: 40px;
+    border-radius: 10px;
+}
 #car{
+    position: relative;
     background-image: url("./img/car.png")
 }
+#car:hover::after{
+    position: absolute;
+    display: block;
+    left: 0px;
+    height: 20px;
+    width: 60px;
+    font-size: 16px;
+    background: white;
+    color: black;
+    content: "車子";
+    top: 40px;
+    border-radius: 10px;
+}
 #wedding{
+    position: relative;
     background-image: url("./img/wedding.png")
 }
+#wedding:hover::after{
+    position: absolute;
+    display: block;
+    left: 0px;
+    height: 20px;
+    width: 60px;
+    font-size: 16px;
+    background: white;
+    color: black;
+    content: "結婚";
+    top: 40px;
+    border-radius: 10px;
+}
 #kid{
+    position: relative;
     background-image: url("./img/kid.png")
 }
+#kid:hover::after{
+    position: absolute;
+    display: block;
+    left: 0px;
+    height: 20px;
+    width: 60px;
+    font-size: 16px;
+    background: white;
+    color: black;
+    content: "孩子";
+    top: 40px;
+    border-radius: 10px;
+}
 #parent{
-    background-image: url("./img/parent.png")
+    background-image: url("./img/parent.png");
+    position: relative;
+}
+#parent:hover::after{
+    position: absolute;
+    display: block;
+    left: 0px;
+    height: 20px;
+    width: 60px;
+    font-size: 16px;
+    background: white;
+    color: black;
+    content: "父母";
+    top: 40px;
+    border-radius: 10px;
 }
 #plane{
+    position: relative;
     background-image: url("./img/plane.png")
 }
+#plane:hover::after{
+    position: absolute;
+    display: block;
+    left: 0px;
+    height: 20px;
+    width: 60px;
+    font-size: 16px;
+    background: white;
+    color: black;
+    content: "旅遊";
+    top: 40px;
+    border-radius: 10px;
+}
 #retire{
+    position: relative;
     background-image: url("./img/retire.png")
 }
+#retire:hover::after{
+    position: absolute;
+    display: block;
+    left: 0px;
+    height: 20px;
+    width: 60px;
+    font-size: 16px;
+    background: white;
+    color: black;
+    content: "退休金";
+    top: 40px;
+    border-radius: 10px;
+}
 #company{
+    position: relative;
     background-image: url("./img/company.png")
+}
+#company:hover::after{
+    position: absolute;
+    display: block;
+    left: 0px;
+    height: 20px;
+    width: 60px;
+    font-size: 16px;
+    background: white;
+    color: black;
+    content: "創業";
+    top: 40px;
+    border-radius: 10px;
 }
 .list-part{
     display: flex;

@@ -2,43 +2,19 @@ let observeRobot
 function skip(){
     let skipButton = document.getElementById('skip-button')
     if(document.getElementsByClassName('test-part')[0].style.height){
-        if(teach){
-            skipButton.disabled = true
-            skipButton.style.background="gray"
-            let nextStage = document.getElementById('next')
-            nextStage.disabled = true
-            nextStage.style.background = "gray"
-            setTimeout(function(){
-                nextStage.style.background="transparent"
-                nextStage.disabled = false
-                skipButton.style.background="transparent"
-                skipButton.disabled = false
-            },9000)
-            let testTalk2 = "硬漢機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，唯一不同的是：硬漢機器人十分硬漢，周圍發生的一切都不會影響他的資產。" 
-            printVerbatim(testTalk2)
-            let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察硬漢機器人的機器人生囉！"
-            observeRobot = setTimeout(function(){
-                printVerbatim(testTalk3)
-            },5000)
-        }
+        clearTimeOuts()
+        let testTalk2 = "硬漢機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，唯一不同的是：硬漢機器人十分硬漢，周圍發生的一切都不會影響他的資產。" 
+        drSay(testTalk2)
+        let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察硬漢機器人的機器人生囉！"
+        observeRobot = setTimeout(function(){
+            drSay(testTalk3)
+        },5000)   
     }else{
-        if(teach){
-            skipButton.disabled = true
-            skipButton.style.background="gray"
-            setTimeout(function(){
-                skipButton.style.background="transparent"
-                skipButton.disabled = false
-            },3000)
+        if(teach){    
+            clearTimeOuts()        
             guideStep(3.1)
-            document.getElementsByClassName('next-button')[0].innerHTML = "關<br>閉<br>教<br>學"
-            teach = false
+            teach = true
         }else{
-            skipButton.style.background="gray"
-            skipButton.disabled = true
-            setTimeout(function(){
-                skipButton.style.background="transparent"
-                skipButton.disabled = false
-            },3000)
             guideStep(3.4)
             document.getElementsByClassName("doctor")[0].style.opacity = 1
             document.getElementsByClassName("black-background")[0].style.background = "rgba(0,0,0,0)"
@@ -62,6 +38,7 @@ function clearTimeOuts(){
     clearTimeout(step3_1)
     clearTimeout(step3_2)
     clearTimeout(step3_3)
+    clearTimeout(observeRobot)
 }
 
 let step0
@@ -91,7 +68,7 @@ function guideStep(step){
 
         case 1:
         let welcomeWords = "歡迎來到『理財宇宙』，我是星球醫生阿傑。"
-        printVerbatim(welcomeWords)
+        drSay(welcomeWords)
         let saying = document.getElementsByClassName("saying")[0]
         step1 = setTimeout(function(){
             guideStep(1.1)
@@ -100,7 +77,7 @@ function guideStep(step){
 
         case 1.1:
         let myFaultwords = "你沒看到宇宙？？喔...抱歉我的錯。"
-        printVerbatim(myFaultwords)
+        drSay(myFaultwords)
         step1_1 = setTimeout(function(){
             guideStep(1.2)
         },2000)
@@ -115,7 +92,7 @@ function guideStep(step){
 
         case 2.0:
         let showPlanetWords = "如剛剛所說，我是個醫生，專門診斷宇宙間各顆星球的問題。我先送你一顆，再跟你說明。"
-        printVerbatim(showPlanetWords)
+        drSay(showPlanetWords)
         step2_0 = setTimeout(function(){
             guideStep(3.0)
         },3000)
@@ -130,7 +107,7 @@ function guideStep(step){
 
         case 3.1:
         let ableToClickWords = "星球很漂亮吧！之後你可以點選星球周圍各種使你人生更豐富圓滿的元素，他們便會出現在你的星球中。"
-        printVerbatim(ableToClickWords)
+        drSay(ableToClickWords)
         step3_1 = setTimeout(function(){
             guideStep(3.2)
         },3500)
@@ -138,7 +115,7 @@ function guideStep(step){
 
         case 3.2:
         let ableToAdjustWords = "同時，加入後的元素可以調整成你真正希望他所應該擁有的價值。"
-        printVerbatim(ableToAdjustWords)
+        drSay(ableToAdjustWords)
         document.getElementsByClassName("list-part")[0].style.opacity = 1
         step3_2 = setTimeout(function(){
             guideStep(3.3)
@@ -147,7 +124,7 @@ function guideStep(step){
 
         case 3.3:
         let basicInfoWords = "在按下最下面的診斷前的最後一步，請填入框框裡的基本資料，對你的生活狀況越清楚，診斷書的內容就會越詳細喔。"
-        printVerbatim(basicInfoWords)
+        drSay(basicInfoWords)
         document.getElementsByClassName("basic-information-part")[0].style.opacity = 1
         step3_3 = setTimeout(function(){
             guideStep(3.4)
@@ -156,7 +133,7 @@ function guideStep(step){
 
         case 3.4:
         let getStartWords = "現在就開始嘗試把夢想加入星球吧！"
-        printVerbatim(getStartWords)
+        drSay(getStartWords)
         initDreams()
         step3_4 = setTimeout(function(){
             document.getElementsByClassName("saying")[0].innerHTML =""
@@ -173,7 +150,8 @@ let handler = function(event){
                 event.target.disabled = true
             }else{
                 if(document.getElementsByClassName('house-planet').length==0){
-                    printVerbatim("北市一間 20 坪房平均約 1000 萬")
+                    clearTimeOuts() 
+                    drSay("北市一間 20 坪房平均約 1000 萬")
                 }
                 flyInToPlanet(event)
                 let chosenPlace = housePlace.pop()
@@ -188,7 +166,8 @@ let handler = function(event){
                 event.target.disabled = true
             }else{
                 if(document.getElementsByClassName('car-planet').length==0){
-                    printVerbatim("基本的車款約 50 萬元")
+                    clearTimeOuts() 
+                    drSay("基本的車款約 50 萬元")
                 }
                 flyInToPlanet(event)
                 dreamShowUp("car")
@@ -202,7 +181,8 @@ let handler = function(event){
                 event.target.disabled = true
             }else{
                 if(document.getElementsByClassName('wedding-planet').length==0){
-                    printVerbatim("一生一次一場難忘的婚禮大約花費 50 萬元") 
+                    clearTimeOuts() 
+                    drSay("一生一次一場難忘的婚禮大約花費 50 萬元") 
                 }
                 flyInToPlanet(event)
                 let chosenPlace = weddingPlace.pop()
@@ -217,7 +197,8 @@ let handler = function(event){
                 event.target.disabled = true
             }else{
                 if(document.getElementsByClassName('kid-planet').length==0){
-                    printVerbatim("一個小孩從出生到大學畢業平均花費 400 萬元")
+                    clearTimeOuts() 
+                    drSay("一個小孩從出生到大學畢業平均花費 400 萬元")
                 }
                 flyInToPlanet(event)
                 let chosenPlace = kidPlace.pop()
@@ -232,7 +213,8 @@ let handler = function(event){
                 event.target.disabled = true
             }else{
                 if(document.getElementsByClassName('parent-planet').length==0){
-                    printVerbatim("預設的奉養費：一個月 5000 * 12 個月 * 40 年 = 240 萬元")
+                    clearTimeOuts() 
+                    drSay("預設的奉養費：一個月 5000 * 12 個月 * 40 年 = 240 萬元")
                 }
                 flyInToPlanet(event)
                 let chosenPlace = parentPlace.pop()
@@ -247,7 +229,9 @@ let handler = function(event){
                 event.target.disabled = true
             }else{
                 if(document.getElementsByClassName('plane-planet').length==0){
-                    printVerbatim("預設的旅遊費：一年出遊 3 次 * 一次 2500元 * 60 年 = 45 萬元")
+                    clearTimeOuts() 
+                    drSay("預設的旅遊費：一年出遊 3 次 * 一次 2500元 * 60 年 = 45 萬元")
+                    
                 }
                 flyInToPlanet(event)
                 dreamShowUp("plane")
@@ -261,7 +245,8 @@ let handler = function(event){
                 event.target.disabled = true
             }else{
                 if(document.getElementsByClassName('retire-planet').length==0){
-                    printVerbatim("預設理想的退休費：退休後每月生活費 20000 * 12 個月 * 20 年 = 480 萬元")
+                    clearTimeOuts() 
+                    drSay("預設理想的退休費：退休後每月生活費 20000 * 12 個月 * 20 年 = 480 萬元")
                 }
                 flyInToPlanet(event)
                 let chosenPlace = retirePlace.pop()
@@ -276,7 +261,8 @@ let handler = function(event){
                 event.target.disabled = true
             }else{
                 if(document.getElementsByClassName('company-planet').length==0){
-                    printVerbatim("預設創業準備金： 100 萬元")
+                    clearTimeOuts() 
+                    drSay("預設創業準備金： 100 萬元")
                 }
                 flyInToPlanet(event)
                 let chosenPlace = companyPlace.pop()
@@ -292,20 +278,16 @@ function initDreams(){
     let numberOfDreams = document.getElementsByClassName('dream-button').length
     for(dream=0;dream<numberOfDreams;dream++){
         let dreamElement = document.getElementsByClassName('dream-button')[dream]
-        
         dreamElement.addEventListener("mousedown",handler)
     } 
 }
 function startTest(){
-    teach = true
     let skipButton = document.getElementById('skip-button')
-    skipButton.innerHTML = "開<br>啟<br>教<br>學"
     skipButton.disabled = true
-    skipButton.style.background="gray"
     setTimeout(function(){
-        skipButton.style.background="transparent"
         skipButton.disabled = false
-    },9000)
+    },10000)
+    skipButton.innerHTML = "開<br>啟<br>教<br>學"
 
     let numberOfDreams = document.getElementsByClassName('dream-button').length
     for(dream=0;dream<numberOfDreams;dream++){
@@ -335,15 +317,15 @@ function startTest(){
     let dreamTotal = house+car+wedding+kid+parent+plane+retire+company
     let testTalk1 = "這星球價值 "+ dreamTotal +" 元呢...... 好的，那現在讓我派出硬漢機器人來嘗試為你打造出這顆星球吧！"
     setTimeout(function(){
-        printVerbatim(testTalk1)
+        drSay(testTalk1)
     },2000)
     let testTalk2 = "硬漢機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，唯一不同的是：硬漢機器人十分硬漢，周圍發生的一切都不會影響他的資產。" 
     setTimeout(function(){
-        printVerbatim(testTalk2)
+        drSay(testTalk2)
     },6500)
     let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察硬漢機器人的機器人生囉！"
     setTimeout(function(){
-        printVerbatim(testTalk3)
+        drSay(testTalk3)
         let nextStage = document.getElementById('next')
         nextStage.style.display = "block"
         nextStage.addEventListener('click',nextHandler)
@@ -377,7 +359,7 @@ function startTest(){
             }
     })
 
-    var barLabels= ['夢想總值','現有資產'];
+    var barLabels= ['夢想總值','現有資產','意外支出'];
     let barPart = document.getElementById('bar').getContext('2d')
     let barChart = new Chart(barPart,{
         type: 'horizontalBar',
@@ -387,8 +369,9 @@ function startTest(){
                     label: "金錢表",
                     data:[dreamTotal,fortune],
                     backgroundColor: [
-                        "rgb(119,136,153,0.5)",
-                        "rgb(255,255,255,0.5)",
+                        "rgba(119,136,153,0.5)",
+                        "rgba(255,255,255,0.5)",
+                        "rgba(114,255,78,0.5)"
                     ],
                     borderColor: "transparent",
                 }],
@@ -465,23 +448,30 @@ function startTest(){
 
         let saveIncome = [27,29,31,34,37,40,44,48,52,57]
         if(document.getElementsByClassName('money-detail')[0]){
-            document.getElementsByClassName('money-detail')[0].innerHTML = "支出 <br> 25萬 <br> 收入 <br>"+saveIncome[ageStage-1]+"萬"
+            document.getElementsByClassName('money-detail')[0].innerHTML = "支出 <br> $25 萬<br> 收入 <br>$"+saveIncome[ageStage-1]+" 萬"
+            let savingDiv = document.getElementsByClassName('money-detail')[0]
+            let costDes = createElement("BUTTON",{atrs:{
+                className:"cost-des"
+            }},savingDiv)
         }
 
         let moneyWidth = (805/ageBalls.children.length)
         if(order == ageBalls.children.length -1){
             // 第一步
             let savingWord = '信箱裡寄來一封六年期，每年五萬保費的儲蓄險宣傳單，但硬漢機器人十分硬漢，他只將宣傳單記錄下來，不會做任何購買。'
-            printVerbatim(savingWord)
+            drSay(savingWord)
             let savingDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             savingDiv.style.width = moneyWidth+"px"
-            savingDiv.innerHTML = "支出 <br> 0萬 <br> 收入 <br> 0萬"
+            savingDiv.innerHTML = "支出 <br> $0 萬<br> 收入 <br>$0 萬"
+            let costDes = createElement("BUTTON",{atrs:{
+                className:"cost-des"
+            }},savingDiv)
         }else if(order == 0){
             // 最後一步
             let finWord = '硬漢機器人度過了'+ (newAge - age) +'年，也到了機器人生的畢業典禮，謝謝機器人的付出。那麼來看看星球診斷的結果吧！'
-            printVerbatim(finWord)
+            drSay(finWord)
             let finDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
@@ -489,54 +479,69 @@ function startTest(){
             finDiv.innerHTML = "謝謝付出"
         }else if(order == 1 && newAge >= 65){
             let longWord = '雖然名為硬漢，但到了這個歲數，硬漢機器人仍然漸漸地無法自理生活而需要看護的幫助。但在金錢這個方面，硬漢機器人依舊十分硬漢，不花半點孔方兄。'
-            printVerbatim(longWord)
+            drSay(longWord)
             let longDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             longDiv.style.width = moneyWidth+"px"
-            longDiv.innerHTML = "支出 <br> ２萬(外勞)/5萬(台灣) <br>* 12個月 <br>* 平均十年 <br>= 240 萬 / 600 萬"
+            longDiv.innerHTML = "支出 <br> $240 萬 / $600 萬"
+            let costDes = createElement("BUTTON",{atrs:{
+                className:"cost-des"
+            }},longDiv)
         }else if(newAge >= retireAge && newAge < (retireAge+10)){
-            let retireWord = '退休了，硬漢機器人在家裡舒舒服服，享受回歸自由。(但同時也不再有收入了)'
-            printVerbatim(retireWord)
+            let retireWord = '退休了，硬漢機器人在家裡舒舒服服，享受回歸自由。但同時也不再有收入了。'
+            drSay(retireWord)
             let retireDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             retireDiv.style.width = moneyWidth+"px"
-            retireDiv.innerHTML = "支出<br>0 萬"
+            retireDiv.innerHTML = "支出<br>$0 萬"
         }else if(order == ageBalls.children.length -2){
             let tripWord = '硬漢機器人到金門玩。出發前機場詢問是否需要旅行平安險，但硬漢機器人十分硬漢，他只將詢問記錄下來不做購買。回程時金門機場起了大霧，讓硬漢機器人在機場多待了一天。'
-            printVerbatim(tripWord)
+            drSay(tripWord)
             let tripDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             tripDiv.style.width = moneyWidth+"px"
-            tripDiv.innerHTML = "支出<br> 100 <br> 收入 <br> 3000 "
+            tripDiv.innerHTML = "支出<br> $100 元<br> 收入 <br> $3000 元"
+            let costDes = createElement("BUTTON",{atrs:{
+                className:"cost-des"
+            }},tripDiv)
         }else if(order == ageBalls.children.length -3){
             let sickWord = '這個夏天流感盛行，硬漢機器人的病情嚴重到需要住院了，但是健保病床全部爆滿，硬漢機器人只能自費醫院單人房，三天後醫師把硬漢機器人的螺絲鎖緊，硬漢機器人再度硬漢！'
-            printVerbatim(sickWord)
+            drSay(sickWord)
             let sickDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             sickDiv.style.width = moneyWidth+"px"
-            sickDiv.innerHTML = "支出<br> 病床一日5000 <br> * 3 日 <br> = 15000"
+            sickDiv.innerHTML = "支出<br> $15000 元"
+            let costDes = createElement("BUTTON",{atrs:{
+                className:"cost-des"
+            }},sickDiv)
         }else if(order == ageBalls.children.length -4){
             let cancerWord = '今年的壓力特別大，硬漢機器人不幸的被診斷出了機器癌第一期 ( 在台灣每五分鐘就有一人罹癌 ) ，但硬漢機器人十分硬漢，經過兩年的療程，機器人順利完全康復了！'
-            printVerbatim(cancerWord)
+            drSay(cancerWord)
             let cancerDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             cancerDiv.style.width = moneyWidth+"px"
-            cancerDiv.innerHTML = "支出 <br>一年 80 萬 <br> * 2 年 <br> =160 萬"
+            cancerDiv.innerHTML = "支出 <br>$160 萬"
+            let costDes = createElement("BUTTON",{atrs:{
+                className:"cost-des"
+            }},cancerDiv)
         }else if(order == ageBalls.children.length -5){
             let catWord = '硬漢機器人騎著機車，眼看要撞上一隻在過馬路的貓咪，鐵漢柔情的他最後一刻閃開了貓咪但撞上了旁邊的奧迪。硬漢機器人沒有第三責任險，但硬漢機器人十分硬漢，不必付錢。'
-            printVerbatim(catWord)
+            drSay(catWord)
             let catDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             catDiv.style.width = moneyWidth+"px"
-            catDiv.innerHTML = "支出<br>50 萬"
+            catDiv.innerHTML = "支出<br>$50 萬"
+            let costDes = createElement("BUTTON",{atrs:{
+                className:"cost-des"
+            }},catDiv)
         }else{
-            printVerbatim("")
+            drSay("")
             let noDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
@@ -600,8 +605,6 @@ function startTest(){
         ageStage++
         if(ageStage == ageBalls.children.length){
             document.getElementById("next").remove()
-            document.getElementById("skip-button").disabled=true
-            document.getElementById("skip-button").style.background = "gray"
             let finalStage = document.createElement("BUTTON")
             finalStage.classList.add("next-button")
             finalStage.innerHTML = "診<br>斷<br>結<br>果"
@@ -612,17 +615,6 @@ function startTest(){
             finalStage.addEventListener('click',finalHandler)
         }else{
             clearTimeOuts()
-            
-            nextStage.disabled = true
-            nextStage.style.background = "gray"
-            skipButton.disabled = true
-            skipButton.style.background="gray"
-            setTimeout(function(){
-                nextStage.style.background="transparent"
-                nextStage.disabled = false
-                skipButton.style.background="transparent"
-                skipButton.disabled = false
-            },4000)
         }
         // 最後結果
         
@@ -700,18 +692,18 @@ function setStyles(obj,styles){
 	}
 	return obj;
 }
-function printVerbatim(words){
-    let talkBack = document.getElementsByClassName("talk-place")[0]
-    talkBack.style.background = "url('./img/talk.png')"
-    talkBack.style.backgroundSize = "100% 100%"
-    let saying = document.getElementsByClassName("saying")[0]
-    saying.innerHTML = ""
+function drSay(words){
+    if(document.getElementsByClassName("saying")[0]){    
+        document.getElementsByClassName("saying")[0].remove()
+    }
+    let sayingDiv = createElement("DIV",{atrs:{
+        className:"saying"
+    }},document.getElementsByClassName('talk-place')[0])
     for(let wordsNum = 0;wordsNum<=words.length;wordsNum++){      
         oneWordByOneWord = setTimeout(function(){
-            saying.innerHTML = words.substr(0,wordsNum)
+            sayingDiv.innerHTML = words.substr(0,wordsNum)
         },50*wordsNum)
     }
-    
 }
 function flyInToPlanet(event){
     //按鈕座標
@@ -738,3 +730,4 @@ function flyInToPlanet(event){
         setTimeout(function(){flyingDream.remove()},1100)
     })
 }
+
