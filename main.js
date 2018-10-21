@@ -3,9 +3,9 @@ function skip(){
     let skipButton = document.getElementById('skip-button')
     if(document.getElementsByClassName('test-part')[0].style.height){
         clearTimeOuts()
-        let testTalk2 = "硬漢機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，唯一不同的是：硬漢機器人十分硬漢，周圍發生的一切都不會影響他的資產。" 
+        let testTalk2 = "小白機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，唯一不同的是：小白機器人十分小白，周圍發生的一切都不會影響他的資產。" 
         drSay(testTalk2)
-        let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察硬漢機器人的機器人生囉！"
+        let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察小白機器人的機器人生囉！"
         observeRobot = setTimeout(function(){
             drSay(testTalk3)
         },5000)   
@@ -149,10 +149,8 @@ let handler = function(event){
             if(document.getElementsByClassName('house-planet').length==5){
                 event.target.disabled = true
             }else{
-                if(document.getElementsByClassName('house-planet').length==0){
-                    clearTimeOuts() 
-                    drSay("北市一間 20 坪房平均約 1000 萬")
-                }
+                clearTimeOuts() 
+                drSay("北市一間 20 坪房平均約 1000 萬")
                 flyInToPlanet(event)
                 let chosenPlace = housePlace.pop()
                 dreamShowUp("house").style.transform = "rotate("+chosenPlace+"deg)"
@@ -165,10 +163,8 @@ let handler = function(event){
             if(document.getElementsByClassName('car-planet').length==8){
                 event.target.disabled = true
             }else{
-                if(document.getElementsByClassName('car-planet').length==0){
-                    clearTimeOuts() 
-                    drSay("基本的車款約 50 萬元")
-                }
+                clearTimeOuts() 
+                drSay("基本的車款約 50 萬元")
                 flyInToPlanet(event)
                 dreamShowUp("car")
                 addtoList("car")
@@ -180,10 +176,8 @@ let handler = function(event){
             if(document.getElementsByClassName('wedding-planet').length==1){
                 event.target.disabled = true
             }else{
-                if(document.getElementsByClassName('wedding-planet').length==0){
-                    clearTimeOuts() 
-                    drSay("一生一次一場難忘的婚禮大約花費 50 萬元") 
-                }
+                clearTimeOuts() 
+                drSay("一生一次一場難忘的婚禮大約花費 50 萬元") 
                 flyInToPlanet(event)
                 let chosenPlace = weddingPlace.pop()
                 dreamShowUp("wedding").style.transform = "rotate("+chosenPlace+"deg)"
@@ -196,10 +190,8 @@ let handler = function(event){
             if(document.getElementsByClassName('kid-planet').length==10){
                 event.target.disabled = true
             }else{
-                if(document.getElementsByClassName('kid-planet').length==0){
-                    clearTimeOuts() 
-                    drSay("一個小孩從出生到大學畢業平均花費 400 萬元")
-                }
+                clearTimeOuts() 
+                drSay("一個小孩從出生到大學畢業平均花費 400 萬元")
                 flyInToPlanet(event)
                 let chosenPlace = kidPlace.pop()
                 dreamShowUp("kid").style.transform = "rotate("+chosenPlace+"deg)"
@@ -212,10 +204,8 @@ let handler = function(event){
             if(document.getElementsByClassName('parent-planet').length==1){
                 event.target.disabled = true
             }else{
-                if(document.getElementsByClassName('parent-planet').length==0){
-                    clearTimeOuts() 
-                    drSay("預設的奉養費：一個月 5000 * 12 個月 * 40 年 = 240 萬元")
-                }
+                clearTimeOuts() 
+                drSay("預設的奉養費：一個月 5000 * 12 個月 * 40 年 = 240 萬元")
                 flyInToPlanet(event)
                 let chosenPlace = parentPlace.pop()
                 dreamShowUp("parent").style.transform = "rotate("+chosenPlace+"deg)"
@@ -228,11 +218,8 @@ let handler = function(event){
             if(document.getElementsByClassName('plane-planet').length==1){
                 event.target.disabled = true
             }else{
-                if(document.getElementsByClassName('plane-planet').length==0){
-                    clearTimeOuts() 
-                    drSay("預設的旅遊費：一年出遊 3 次 * 一次 2500元 * 60 年 = 45 萬元")
-                    
-                }
+                clearTimeOuts() 
+                drSay("預設的旅遊費：一年出遊 3 次 * 一次 2500元 * 60 年 = 45 萬元")
                 flyInToPlanet(event)
                 dreamShowUp("plane")
                 addtoList("plane")
@@ -244,10 +231,8 @@ let handler = function(event){
             if(document.getElementsByClassName('retire-planet').length==1){
                 event.target.disabled = true
             }else{
-                if(document.getElementsByClassName('retire-planet').length==0){
-                    clearTimeOuts() 
-                    drSay("預設理想的退休費：退休後每月生活費 20000 * 12 個月 * 20 年 = 480 萬元")
-                }
+                clearTimeOuts() 
+                drSay("預設理想的退休費：退休後每月生活費 20000 * 12 個月 * 20 年 = 480 萬元")
                 flyInToPlanet(event)
                 let chosenPlace = retirePlace.pop()
                 dreamShowUp("retire").style.transform = "rotate("+chosenPlace+"deg)"
@@ -260,10 +245,8 @@ let handler = function(event){
             if(document.getElementsByClassName('company-planet').length==3){
                 event.target.disabled = true
             }else{
-                if(document.getElementsByClassName('company-planet').length==0){
-                    clearTimeOuts() 
-                    drSay("預設創業準備金： 100 萬元")
-                }
+                clearTimeOuts() 
+                drSay("預設創業準備金： 100 萬元")
                 flyInToPlanet(event)
                 let chosenPlace = companyPlace.pop()
                 dreamShowUp("company").style.transform = "rotate("+chosenPlace+"deg)"
@@ -289,6 +272,11 @@ function startTest(){
     },10000)
     skipButton.innerHTML = "開<br>啟<br>教<br>學"
 
+    createElement("DIV",{atrs:{
+        style:"position:absolute;left:2%;color:rgb(255,215,0)",
+        innerHTML:"歲數",
+    }},document.getElementsByClassName('age-part')[0])
+
     let numberOfDreams = document.getElementsByClassName('dream-button').length
     for(dream=0;dream<numberOfDreams;dream++){
         let dreamElement = document.getElementsByClassName('dream-button')[dream]
@@ -297,6 +285,9 @@ function startTest(){
     let testPart = document.getElementsByClassName("test-part")[0]
     testPart.style.height = "400px";
     testPart.style.boxShadow = "0px 0px 3px 3px greenyellow"
+    document.getElementsByClassName('planet-part')[0].style.top="50px"
+    document.getElementsByClassName('list-part')[0].style.top="100px"
+    document.getElementsByClassName('basic-information-part')[0].style.top="150px"
 
     let salary = parseInt(document.getElementsByName("salary")[0].value)
     let age = parseInt(document.getElementsByName("age")[0].value)
@@ -315,15 +306,19 @@ function startTest(){
     let company = parseInt(document.getElementsByName("company")[0].value)
 
     let dreamTotal = house+car+wedding+kid+parent+plane+retire+company
-    let testTalk1 = "這星球價值 "+ dreamTotal +" 元呢...... 好的，那現在讓我派出硬漢機器人來嘗試為你打造出這顆星球吧！"
+    let testTalk1 = "這星球價值 "+ dreamTotal +" 元呢...... 好的，那現在讓我派出小白機器人來嘗試為你打造出這顆星球吧！"
     setTimeout(function(){
         drSay(testTalk1)
     },2000)
-    let testTalk2 = "硬漢機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，唯一不同的是：硬漢機器人十分硬漢，周圍發生的一切都不會影響他的資產。" 
+    setTimeout(function(){
+        document.getElementsByClassName('robot')[0].style.opacity = 1
+        document.getElementsByClassName('robot')[0].style.transform = "rotate(720deg)"
+    },5000)
+    let testTalk2 = "小白機器人有著與您相同的收入和生活支出，同時他將面對所有人生中所可能發生的事情，他一切的經歷都會被記錄下來。" 
     setTimeout(function(){
         drSay(testTalk2)
     },6500)
-    let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察硬漢機器人的機器人生囉！"
+    let testTalk3 = "現在可以按下左側的『下一階段』按鈕來觀察小白機器人的機器人生囉！"
     setTimeout(function(){
         drSay(testTalk3)
         let nextStage = document.getElementById('next')
@@ -367,7 +362,7 @@ function startTest(){
                 labels:barLabels,
                 datasets: [{
                     label: "金錢表",
-                    data:[dreamTotal,fortune],
+                    data:[dreamTotal,fortune,accident],
                     backgroundColor: [
                         "rgba(119,136,153,0.5)",
                         "rgba(255,255,255,0.5)",
@@ -453,12 +448,29 @@ function startTest(){
             let costDes = createElement("BUTTON",{atrs:{
                 className:"cost-des"
             }},savingDiv)
-        }
+            costDes.addEventListener('click',function(){
+                if(document.getElementById('saving-close')){
 
+                }else{
+                    let desPart = createElement("DIV",{atrs:{
+                        id:"saving-close",
+                        className:"des-part",
+                        innerHTML:"此處範例使用一年 1% 的利率"
+                    }},document.getElementsByClassName('test-part')[0])
+                    let closeDesPart = createElement("BUTTON",{atrs:{
+                        className:"close-button",
+                    }},desPart)
+                    closeDesPart.addEventListener("click",function(){
+                        document.getElementById('saving-close').remove()
+                    })
+                }
+            })
+        }
+        
         let moneyWidth = (805/ageBalls.children.length)
         if(order == ageBalls.children.length -1){
             // 第一步
-            let savingWord = '信箱裡寄來一封六年期，每年五萬保費的儲蓄險宣傳單，但硬漢機器人十分硬漢，他只將宣傳單記錄下來，不會做任何購買。'
+            let savingWord = '信箱裡寄來一封六年期，每年五萬保費的儲蓄險宣傳單。'
             drSay(savingWord)
             let savingDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
@@ -468,17 +480,40 @@ function startTest(){
             let costDes = createElement("BUTTON",{atrs:{
                 className:"cost-des"
             }},savingDiv)
+            accident = accident + 0
+            barChart.data.datasets[0].data = [dreamTotal,nowFortune,accident]
+            barChart.update()
+            costDes.addEventListener('click',function(){
+                if(document.getElementById('saving-close')){
+
+                }else{
+                    let desPart = createElement("DIV",{atrs:{
+                        id:"saving-close",
+                        className:"des-part",
+                        innerHTML:"此處範例使用一年 1% 的利率"
+                    }},document.getElementsByClassName('test-part')[0])
+                    let closeDesPart = createElement("BUTTON",{atrs:{
+                        className:"close-button",
+                    }},desPart)
+                    closeDesPart.addEventListener("click",function(){
+                        document.getElementById('saving-close').remove()
+                    })
+                }
+            })
         }else if(order == 0){
             // 最後一步
-            let finWord = '硬漢機器人度過了'+ (newAge - age) +'年，也到了機器人生的畢業典禮，謝謝機器人的付出。那麼來看看星球診斷的結果吧！'
+            let finWord = '小白機器人度過了'+ (newAge - age) +'年，也到了機器人生的畢業典禮，謝謝機器人的付出。那麼來看看小白機器人的機器人生吧！'
             drSay(finWord)
             let finDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             finDiv.style.width = moneyWidth+"px"
             finDiv.innerHTML = "謝謝付出"
+            accident = accident + 0
+            barChart.data.datasets[0].data = [dreamTotal,nowFortune,accident]
+            barChart.update()
         }else if(order == 1 && newAge >= 65){
-            let longWord = '雖然名為硬漢，但到了這個歲數，硬漢機器人仍然漸漸地無法自理生活而需要看護的幫助。但在金錢這個方面，硬漢機器人依舊十分硬漢，不花半點孔方兄。'
+            let longWord = '到了這個歲數，小白機器人然漸漸地無法自理生活而需要看護的幫助，因此找了一位外國看護來協助打理生活。'
             drSay(longWord)
             let longDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
@@ -488,58 +523,161 @@ function startTest(){
             let costDes = createElement("BUTTON",{atrs:{
                 className:"cost-des"
             }},longDiv)
+            accident = accident + 2400000
+            barChart.data.datasets[0].data = [dreamTotal,nowFortune,accident]
+            barChart.update()
+            costDes.addEventListener('click',function(){
+                if(document.getElementById('long-close')){
+
+                }else{
+                    let desPart = createElement("DIV",{atrs:{
+                        id:"long-close",
+                        className:"des-part",
+                        innerHTML:"外國看護一個月兩萬薪資，台灣看護一個月四萬薪資，台灣平均長照時間為 10 年<br>20000*12*10=240 萬<br>50000*12*10=600 萬"
+                    }},document.getElementsByClassName('test-part')[0])
+                    let closeDesPart = createElement("BUTTON",{atrs:{
+                        className:"close-button",
+                    }},desPart)
+                    closeDesPart.addEventListener("click",function(){
+                        document.getElementById('long-close').remove()
+                    })
+                }
+            })
         }else if(newAge >= retireAge && newAge < (retireAge+10)){
-            let retireWord = '退休了，硬漢機器人在家裡舒舒服服，享受回歸自由。但同時也不再有收入了。'
+            let retireWord = '退休了，小白機器人在家裡舒舒服服，享受回歸自由。但同時也不再有收入了。'
             drSay(retireWord)
             let retireDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             retireDiv.style.width = moneyWidth+"px"
             retireDiv.innerHTML = "支出<br>$0 萬"
+            accident = accident + 0
+            barChart.data.datasets[0].data = [dreamTotal,nowFortune,accident]
+            barChart.update()
         }else if(order == ageBalls.children.length -2){
-            let tripWord = '硬漢機器人到金門玩。出發前機場詢問是否需要旅行平安險，但硬漢機器人十分硬漢，他只將詢問記錄下來不做購買。回程時金門機場起了大霧，讓硬漢機器人在機場多待了一天。'
+            let tripWord = '小白機器人到日本玩。出發前在機場買了旅行平安險。回程時剛好遇上颱風，讓小白機器人在機場多待了兩天。'
             drSay(tripWord)
             let tripDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             tripDiv.style.width = moneyWidth+"px"
-            tripDiv.innerHTML = "支出<br> $100 元<br> 收入 <br> $3000 元"
+            tripDiv.innerHTML = "支出<br> $500 元<br> 收入 <br> $3000 元"
             let costDes = createElement("BUTTON",{atrs:{
                 className:"cost-des"
             }},tripDiv)
+            accident = accident + 0
+            barChart.data.datasets[0].data = [dreamTotal,nowFortune,accident]
+            barChart.update()
+            costDes.addEventListener('click',function(){
+                if(document.getElementById('trip-close')){
+
+                }else{
+                    let desPart = createElement("DIV",{atrs:{
+                        id:"trip-close",
+                        className:"des-part",
+                        innerHTML:"各家旅遊平安險理賠項目不盡相同，購買前請詳細查閱條款。"
+                    }},document.getElementsByClassName('test-part')[0])
+                    let closeDesPart = createElement("BUTTON",{atrs:{
+                        className:"close-button",
+                    }},desPart)
+                    closeDesPart.addEventListener("click",function(){
+                        document.getElementById('trip-close').remove()
+                    })
+                }
+            })
         }else if(order == ageBalls.children.length -3){
-            let sickWord = '這個夏天流感盛行，硬漢機器人的病情嚴重到需要住院了，但是健保病床全部爆滿，硬漢機器人只能自費醫院單人房，三天後醫師把硬漢機器人的螺絲鎖緊，硬漢機器人再度硬漢！'
+            let sickWord = '這個夏天流感盛行，小白機器人的病情嚴重到需要住院了，但是健保病床全部爆滿，小白機器人只能自費醫院單人房，一住就是一個星期。'
             drSay(sickWord)
             let sickDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             sickDiv.style.width = moneyWidth+"px"
-            sickDiv.innerHTML = "支出<br> $15000 元"
+            sickDiv.innerHTML = "支出<br> $35000 元"
             let costDes = createElement("BUTTON",{atrs:{
                 className:"cost-des"
             }},sickDiv)
+            accident = accident + 35000
+            barChart.data.datasets[0].data = [dreamTotal,nowFortune,accident]
+            barChart.update()
+            costDes.addEventListener('click',function(){
+                if(document.getElementById('sick-close')){
+
+                }else{
+                    let desPart = createElement("DIV",{atrs:{
+                        id:"sick-close",
+                        className:"des-part",
+                        innerHTML:"各家醫院自費病床價格不盡相同，此處以台大醫院<br>(2080 元～ 8000 元)<br>之平均為範例。"
+                    }},document.getElementsByClassName('test-part')[0])
+                    let closeDesPart = createElement("BUTTON",{atrs:{
+                        className:"close-button",
+                    }},desPart)
+                    closeDesPart.addEventListener("click",function(){
+                        document.getElementById('sick-close').remove()
+                    })
+                }
+            })
         }else if(order == ageBalls.children.length -4){
-            let cancerWord = '今年的壓力特別大，硬漢機器人不幸的被診斷出了機器癌第一期 ( 在台灣每五分鐘就有一人罹癌 ) ，但硬漢機器人十分硬漢，經過兩年的療程，機器人順利完全康復了！'
+            let cancerWord = '今年的壓力特別大，小白機器人不幸的被診斷出了機器癌第一期 ( 在台灣每五分鐘就有一人罹癌 )。經過三年的療程，小白順利完全康復了！'
             drSay(cancerWord)
             let cancerDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             cancerDiv.style.width = moneyWidth+"px"
-            cancerDiv.innerHTML = "支出 <br>$160 萬"
+            cancerDiv.innerHTML = "支出 <br>$240 萬"
             let costDes = createElement("BUTTON",{atrs:{
                 className:"cost-des"
             }},cancerDiv)
+            accident = accident + 2400000
+            barChart.data.datasets[0].data = [dreamTotal,nowFortune,accident]
+            barChart.update()
+            costDes.addEventListener('click',function(){
+                if(document.getElementById('cancel-close')){
+
+                }else{
+                    let desPart = createElement("DIV",{atrs:{
+                        id:"cancel-close",
+                        className:"des-part",
+                        innerHTML:"用於治療癌症之藥物，平均每年花費 80~120 萬。"
+                    }},document.getElementsByClassName('test-part')[0])
+                    let closeDesPart = createElement("BUTTON",{atrs:{
+                        className:"close-button",
+                    }},desPart)
+                    closeDesPart.addEventListener("click",function(){
+                        document.getElementById('cancel-close').remove()
+                    })
+                }
+            })
         }else if(order == ageBalls.children.length -5){
-            let catWord = '硬漢機器人騎著機車，眼看要撞上一隻在過馬路的貓咪，鐵漢柔情的他最後一刻閃開了貓咪但撞上了旁邊的奧迪。硬漢機器人沒有第三責任險，但硬漢機器人十分硬漢，不必付錢。'
+            let catWord = '小白機器人騎著機車，眼看要撞上一隻在過馬路的貓咪，鐵漢柔情的他最後一刻閃開了貓咪但撞上了旁邊的奧迪。'
             drSay(catWord)
             let catDiv = createElement("DIV",{atrs:{
                 className:"money-detail"
             }},moneyDetailPart)
             catDiv.style.width = moneyWidth+"px"
-            catDiv.innerHTML = "支出<br>$50 萬"
+            catDiv.innerHTML = "支出<br>$5 萬"
             let costDes = createElement("BUTTON",{atrs:{
                 className:"cost-des"
             }},catDiv)
+            accident = accident + 50000
+            barChart.data.datasets[0].data = [dreamTotal,nowFortune,accident]
+            barChart.update()
+            costDes.addEventListener('click',function(){
+                if(document.getElementById('cat-close')){
+
+                }else{
+                    let desPart = createElement("DIV",{atrs:{
+                        id:"cat-close",
+                        className:"des-part",
+                        innerHTML:"所幸撞得不嚴重，花錢消災就好。"
+                    }},document.getElementsByClassName('test-part')[0])
+                    let closeDesPart = createElement("BUTTON",{atrs:{
+                        className:"close-button",
+                    }},desPart)
+                    closeDesPart.addEventListener("click",function(){
+                        document.getElementById('cat-close').remove()
+                    })
+                }
+            })
         }else{
             drSay("")
             let noDiv = createElement("DIV",{atrs:{
@@ -552,53 +690,63 @@ function startTest(){
             let result={}
             if(nowFortune<dreamTotal){
                 result.type="入<br>不<br>敷<br>出"
-                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入不敷夢想的支出。這顆星球無法在這樣的收入情況下，完成星球中的夢想<br><br>參考處方籤：(1)增加收入(2)減少夢想價值"
-                result.summary=""
+                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入不敷夢想的支出。<br>意外支出："+ accident +"<br>這顆星球無法在這樣的收入情況下，完成星球中的夢想"
+                result.summary="參考建議<br>您目前的收入不足以打造出您的夢想星球，這意味著您可能需要有更多的收入、降低您夢想的總值或著用更有效的方式來規劃財務。而沒有避險的的人生，就像買大樂透，是一種隨機的賭博。以上的各種問題，星球醫生阿傑都可以成為您的咨詢師給予適合您的建議"
             }else if(nowFortune >= dreamTotal && nowFortune < (dreamTotal+30000000)){
                 result.type="精<br>益<br>求<br>精"
-                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入足以負擔夢想價值。"
-                result.summary=""
+                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入足以負擔夢想價值。<br>意外支出："+ accident +"<br>此份收入足以在退休前完成所有夢想"
+                result.summary="參考建議<br>您的收入足以在沒有任何意外發生的情況下打造出夢想星球，但沒有避險的的人生，就像買大樂透，是一種隨機的賭博。居安思危、防微杜漸的人有能力活得更加自由！阿傑隨時樂意為您服務(連結)。"
             }else{
-                console.log(dreamTotal)
                 result.type="無<br>所<br>畏<br>懼"
-                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入爆表，財力驚人。"
-                result.summary=""
+                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入爆表，財力驚人。<br>意外支出："+ accident +"<br>這顆星球無法在這樣的收入情況下，完成星球中的夢想"
+                result.summary="參考建議<br>您擁有十分突出的薪水收入，在達成夢想的部分算是毫無困難的。但阿傑仍然建議您可以在理財和避險的部分有更近一步的了解，歡迎您透過以下連結聯絡我。"
             }
             
             
+            if(document.getElementsByClassName('final-report')[0]){
 
+            }else{
+                let finalReport = createElement("DIV",{atrs:{
+                    className:"final-report"
+                }},document.getElementsByTagName('body')[0])
+    
+                let finalReportContent = createElement("DIV",{atrs:{
+                    className:"final-report-content"
+                }},finalReport)
+    
+                let finalTitle = createElement("DIV",{atrs:{
+                    className:"final-title",
+                    innerHTML:"小白機器人的一生"
+                }},finalReportContent)
+    
+                let finalContent = createElement("DIV",{atrs:{
+                    className:"final-content",
+                }},finalReportContent)
+    
+                let finalContentType = createElement("DIV",{atrs:{
+                    className:"final-content-type",
+                    innerHTML:result.type
+                }},finalContent)
+    
+                let finalContentTypeDiscript = createElement("DIV",{atrs:{
+                    className:"final-content-type-discript",
+                    innerHTML:result.typeDiscript
+                }},finalContent)
+    
+                let finalContentSummary= createElement("DIV",{atrs:{
+                    className:"final-content-type-summary",
+                    innerHTML:result.summary
+                }},finalReportContent)
 
-            let finalReport = createElement("DIV",{atrs:{
-                className:"final-report"
-            }},document.getElementsByTagName('body')[0])
+                let closeButton = createElement("BUTTON",{atrs:{
+                    className:"close-button"
+                }},finalReportContent)
+                closeButton.addEventListener("click",function(){
+                    document.getElementsByClassName('final-report')[0].remove()
+                })
+            }
 
-            let finalReportContent = createElement("DIV",{atrs:{
-                className:"final-report-content"
-            }},finalReport)
-
-            let finalTitle = createElement("DIV",{atrs:{
-                className:"final-title",
-                innerHTML:"診斷結果"
-            }},finalReportContent)
-
-            let finalContent = createElement("DIV",{atrs:{
-                className:"final-content",
-            }},finalReportContent)
-
-            let finalContentType = createElement("DIV",{atrs:{
-                className:"final-content-type",
-                innerHTML:result.type
-            }},finalContent)
-
-            let finalContentTypeDiscript = createElement("DIV",{atrs:{
-                className:"final-content-type-discript",
-                innerHTML:result.typeDiscript
-            }},finalContent)
-
-            let finalContentSummary= createElement("DIV",{atrs:{
-                className:"final-content-type-summary",
-                innerHTML:result.summary
-            }},finalReportContent)
+            
 
             
         }
@@ -731,3 +879,8 @@ function flyInToPlanet(event){
     })
 }
 
+function FormatNumber(n) { 
+    n += ""; 
+    var re = /(\d{1,3})(?=(\d{3})+$)/g; 
+    return n.replace(re,"$1,"); 
+} 

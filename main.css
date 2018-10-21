@@ -40,7 +40,7 @@ button{
         width: 70%;
         height: 450px;
         top:125px;
-        background: dimgray;
+        background: wheat;
         border-radius: 50px;
         display: flex;
         align-items: center;
@@ -48,24 +48,24 @@ button{
     }
     .final-report-content{
         position: relative;
-        height: 95%;
-        width: 95%;
+        height: 98%;
+        width: 98%;
         border-radius: 50px;
-        border:white 1px solid;
-        color: white;
+        border:black 1px solid;
+        color: black;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     .final-title{
-        color: white;
+        color: black;
         width: 100%;
         font-size: 36px;
         padding-top: 10px;
         text-align: center;
     }
     .final-content{
-        color: white;
+        color: black;
         width: 70%;
         height: 200px;
         padding-top: 10px;
@@ -104,6 +104,31 @@ button{
         width: 100%;
         font-size: 14px;
     }
+    .close-button{
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        background: url(./img/close.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border:none;
+    }
+    .des-part{
+        width: 20%;
+        padding:5% 5%;
+        height: 50%;
+        background: black;
+        border-radius: 30px;
+        position: absolute;
+        left: 35%;
+        border: solid white;
+        color: white;
+        display: flex;
+    }
 }
 @media screen and (max-width: 1000px) and (min-width: 600px){
     .content{
@@ -139,7 +164,7 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    height: 37%;
+    height: 42%;
     width: 100%;
 }
 .bar-part{
@@ -167,12 +192,13 @@ button{
     position: absolute;
     height: 80%;
     width: 50px;
-    left: 5%;
+    left: 9%;
     background: url('./img/robot0.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     transition: 1s;
+    opacity: 0;
 }
 .age-ball-part{
     display: flex;
@@ -197,7 +223,7 @@ button{
     justify-content: flex-end;
     flex-direction: row;
     align-items: center;
-    height: 45%;
+    height: 40%;
     width: 100%;
 }
 .money-detail-part{
@@ -227,7 +253,7 @@ button{
 }
 .doctor-part{
     width: 100%;
-    height: 100px;/* 高度用到 px */
+    height: 150px;/* 高度用到 px */
     display: flex;
     flex-direction: row;
     border-bottom: brown solid 3px;
@@ -288,7 +314,6 @@ button{
     position: absolute;
     background: black;
 }
-
 .planet-part{
     width: 100%;
     height: 300px;/* 高度用到 px */
@@ -297,7 +322,7 @@ button{
     justify-content: space-between;
     opacity: 0;
     transition: all 1s;
-    top: 50px;
+    top: 0px;
 }
 .side-planet-part{
     display: flex;
@@ -478,7 +503,7 @@ button{
     border-radius: 20px;
     opacity: 0;
     transition: all 1s;
-    top: 100px;
+    top: 50px;
 }
 .side-list{
     height: 100%;
@@ -521,7 +546,7 @@ button{
     color: white;
     opacity: 0;
     transition: all 1s;
-    top: 150px;
+    top: 100px;
     margin: 0px 0px 50px 0px;
 }
 .basic-info{
@@ -534,10 +559,10 @@ button{
     justify-content: space-around;
 }
 .test-button{
-    width: 30%;
+    width: 18%;
     height: 100%;
     border-radius: 50%;
-    font-size: 30px;
+    font-size: 24px;
     box-shadow: 0px 0px 3px 3px white;
     background: transparent;
     color: white;
