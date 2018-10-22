@@ -156,7 +156,7 @@ let handler = function(event){
                 dreamShowUp("house").style.transform = "rotate("+chosenPlace+"deg)"
                 addtoList("house")
                 let house = document.getElementsByName("house")[0].value
-                document.getElementsByName("house")[0].value = (parseInt(house) + 10000000) 
+                document.getElementsByName("house")[0].value = FormatNumber(parseInt(delComma(house)) + 10000000) 
             }
             break;
         case "car":
@@ -169,7 +169,7 @@ let handler = function(event){
                 dreamShowUp("car")
                 addtoList("car")
                 let car = document.getElementsByName("car")[0].value
-                document.getElementsByName("car")[0].value = (parseInt(car) + 500000)
+                document.getElementsByName("car")[0].value = FormatNumber(parseInt(delComma(car)) + 500000)
             }
             break;
         case "wedding":
@@ -183,7 +183,7 @@ let handler = function(event){
                 dreamShowUp("wedding").style.transform = "rotate("+chosenPlace+"deg)"
                 addtoList("wedding")
                 let wedding = document.getElementsByName("wedding")[0].value
-                document.getElementsByName("wedding")[0].value = (parseInt(wedding) + 500000)
+                document.getElementsByName("wedding")[0].value = FormatNumber(parseInt(delComma(wedding)) + 500000)
             }
             break;
         case "kid":
@@ -197,7 +197,7 @@ let handler = function(event){
                 dreamShowUp("kid").style.transform = "rotate("+chosenPlace+"deg)"
                 addtoList("kid")
                 let kid = document.getElementsByName("kid")[0].value
-                document.getElementsByName("kid")[0].value = (parseInt(kid) + 4000000)
+                document.getElementsByName("kid")[0].value = FormatNumber(parseInt(delComma(kid)) + 4000000)
             }
             break;
         case "parent":
@@ -211,7 +211,7 @@ let handler = function(event){
                 dreamShowUp("parent").style.transform = "rotate("+chosenPlace+"deg)"
                 addtoList("parent")
                 let parent = document.getElementsByName("parent")[0].value
-                document.getElementsByName("parent")[0].value = (parseInt(parent) + 240000)
+                document.getElementsByName("parent")[0].value = FormatNumber(parseInt(delComma(parent)) + 240000)
             }
             break;
         case "plane":
@@ -224,7 +224,7 @@ let handler = function(event){
                 dreamShowUp("plane")
                 addtoList("plane")
                 let plane = document.getElementsByName("plane")[0].value
-                document.getElementsByName("plane")[0].value = (parseInt(plane) + 450000)
+                document.getElementsByName("plane")[0].value = FormatNumber(parseInt(delComma(plane)) + 450000)
             }
             break;
         case "retire":
@@ -238,7 +238,7 @@ let handler = function(event){
                 dreamShowUp("retire").style.transform = "rotate("+chosenPlace+"deg)"
                 addtoList("retire")
                 let retire = document.getElementsByName("retire")[0].value
-                document.getElementsByName("retire")[0].value = (parseInt(retire) + 4800000)
+                document.getElementsByName("retire")[0].value = FormatNumber(parseInt(delComma(retire)) + 4800000)
             }
             break;
         case "company":
@@ -252,7 +252,7 @@ let handler = function(event){
                 dreamShowUp("company").style.transform = "rotate("+chosenPlace+"deg)"
                 addtoList("company")
                 let company = document.getElementsByName("company")[0].value
-                document.getElementsByName("company")[0].value = (parseInt(company) + 1000000)
+                document.getElementsByName("company")[0].value = FormatNumber(parseInt(delComma(company)) + 1000000)
             }
             break;
     }
@@ -690,15 +690,15 @@ function startTest(){
             let result={}
             if(nowFortune<dreamTotal){
                 result.type="入<br>不<br>敷<br>出"
-                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入不敷夢想的支出。<br>意外支出："+ accident +"<br>這顆星球無法在這樣的收入情況下，完成星球中的夢想"
+                result.typeDiscript="收入總值："+FormatNumber(nowFortune)+"<br>夢想總值："+FormatNumber(dreamTotal)+"<br>結果：收入不敷夢想的支出。<br>意外支出："+ FormatNumber(accident) +"<br>這顆星球無法在這樣的收入情況下，完成星球中的夢想"
                 result.summary="參考建議<br>您目前的收入不足以打造出您的夢想星球，這意味著您可能需要有更多的收入、降低您夢想的總值或著用更有效的方式來規劃財務。而沒有避險的的人生，就像買大樂透，是一種隨機的賭博。以上的各種問題，星球醫生阿傑都可以成為您的咨詢師給予適合您的建議"
             }else if(nowFortune >= dreamTotal && nowFortune < (dreamTotal+30000000)){
                 result.type="精<br>益<br>求<br>精"
-                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入足以負擔夢想價值。<br>意外支出："+ accident +"<br>此份收入足以在退休前完成所有夢想"
+                result.typeDiscript="收入總值："+FormatNumber(nowFortune)+"<br>夢想總值："+FormatNumber(dreamTotal)+"<br>結果：收入足以負擔夢想價值。<br>意外支出："+ FormatNumber(accident) +"<br>此份收入足以在退休前完成所有夢想"
                 result.summary="參考建議<br>您的收入足以在沒有任何意外發生的情況下打造出夢想星球，但沒有避險的的人生，就像買大樂透，是一種隨機的賭博。居安思危、防微杜漸的人有能力活得更加自由！阿傑隨時樂意為您服務(連結)。"
             }else{
                 result.type="無<br>所<br>畏<br>懼"
-                result.typeDiscript="收入總值："+nowFortune+"<br>夢想總值："+dreamTotal+"<br>結果：收入爆表，財力驚人。<br>意外支出："+ accident +"<br>這顆星球無法在這樣的收入情況下，完成星球中的夢想"
+                result.typeDiscript="收入總值："+FormatNumber(nowFortune)+"<br>夢想總值："+FormatNumber(dreamTotal)+"<br>結果：收入爆表，財力驚人。<br>意外支出："+ FormatNumber(accident) +"<br>太厲害了，完成夢想算是輕而易舉呢"
                 result.summary="參考建議<br>您擁有十分突出的薪水收入，在達成夢想的部分算是毫無困難的。但阿傑仍然建議您可以在理財和避險的部分有更近一步的了解，歡迎您透過以下連結聯絡我。"
             }
             
@@ -891,9 +891,7 @@ function FormatNumber(n) {
 } 
 function inputKeyup(){
     for(let i=0;i<document.getElementsByClassName('dream-total').length;i++){
-        console.log(1234)
         document.getElementsByClassName('dream-total')[i].addEventListener('keyup',function(e){
-            console.log(123)
             let theValue = e.target.value
             document.getElementsByClassName('dream-total')[i].value = FormatNumber(theValue)
         })
