@@ -289,21 +289,21 @@ function startTest(){
     document.getElementsByClassName('list-part')[0].style.top="100px"
     document.getElementsByClassName('basic-information-part')[0].style.top="150px"
 
-    let salary = parseInt(document.getElementsByName("salary")[0].value)
-    let age = parseInt(document.getElementsByName("age")[0].value)
-    let retireAge = parseInt(document.getElementsByName("retire-age")[0].value)
-    let fortune = parseInt(document.getElementsByName("fortune")[0].value)
-    let dieAge = parseInt(document.getElementsByName("die-age")[0].value)
-    let cost = parseInt(document.getElementsByName("cost")[0].value)
+    let salary = parseInt(delComma(document.getElementsByName("salary")[0].value))
+    let age = parseInt(delComma(document.getElementsByName("age")[0].value))
+    let retireAge = parseInt(delComma(document.getElementsByName("retire-age")[0].value))
+    let fortune = parseInt(delComma(document.getElementsByName("fortune")[0].value))
+    let dieAge = parseInt(delComma(document.getElementsByName("die-age")[0].value))
+    let cost = parseInt(delComma(document.getElementsByName("cost")[0].value))
 
-    let house = parseInt(document.getElementsByName("house")[0].value)
-    let car = parseInt(document.getElementsByName("car")[0].value)
-    let wedding = parseInt(document.getElementsByName("wedding")[0].value)
-    let kid = parseInt(document.getElementsByName("kid")[0].value)
-    let parent = parseInt(document.getElementsByName("parent")[0].value)
-    let plane = parseInt(document.getElementsByName("plane")[0].value)
-    let retire = parseInt(document.getElementsByName("retire")[0].value)
-    let company = parseInt(document.getElementsByName("company")[0].value)
+    let house = parseInt(delComma(document.getElementsByName("house")[0].value))
+    let car = parseInt(delComma(document.getElementsByName("car")[0].value))
+    let wedding = parseInt(delComma(document.getElementsByName("wedding")[0].value))
+    let kid = parseInt(delComma(document.getElementsByName("kid")[0].value))
+    let parent = parseInt(delComma(document.getElementsByName("parent")[0].value))
+    let plane = parseInt(delComma(document.getElementsByName("plane")[0].value))
+    let retire = parseInt(delComma(document.getElementsByName("retire")[0].value))
+    let company = parseInt(delComma(document.getElementsByName("company")[0].value))
 
     let dreamTotal = house+car+wedding+kid+parent+plane+retire+company
     let testTalk1 = "這星球價值 "+ dreamTotal +" 元呢...... 好的，那現在讓我派出小白機器人來嘗試為你打造出這顆星球吧！"
@@ -883,4 +883,25 @@ function FormatNumber(n) {
     n += ""; 
     var re = /(\d{1,3})(?=(\d{3})+$)/g; 
     return n.replace(re,"$1,"); 
+} 
+function FormatNumber(n) {  
+    n += "";  
+    var re = /(\d{1,3})(?=(\d{3})+$)/g;  
+    return n.replace(re,"$1,");  
+} 
+function inputKeyup(){
+    for(let i=0;i<document.getElementsByClassName('dream-total').length;i++){
+        console.log(1234)
+        document.getElementsByClassName('dream-total')[i].addEventListener('keyup',function(e){
+            console.log(123)
+            let theValue = e.target.value
+            document.getElementsByClassName('dream-total')[i].value = FormatNumber(theValue)
+        })
+    }
+}
+function delComma(data){ 
+    if(data) { 
+        data = data.replace(/[,]/g, ''); 
+        return data; 
+    } 
 } 
