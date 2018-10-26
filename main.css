@@ -45,7 +45,7 @@ button{
     background: black;
 }
 .next-button{
-    height: auto;
+    height: 80%;
     width: 30%;
     color: white;
     background: black;
@@ -279,7 +279,7 @@ button{
     position: relative;
     background-image: url("./img/house.png")
 }
-#house:hover::after{/*小螢幕用 active */
+#house:hover::after{
     position: absolute;
     display: block;
     left: 0px;

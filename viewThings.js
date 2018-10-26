@@ -283,7 +283,7 @@ viewThings.createFinalDiv = function(){
     }else{
         finalReport.style.height = "400px";
     }
-    document.getElementsByClassName('planet-part')[0].style.top="50px"
+    document.getElementsByClassName('planet-part')[0].style.top="25px"
     document.getElementsByClassName('list-part')[0].style.top="80px"
     document.getElementsByClassName('basic-information-part')[0].style.top="110px"
     document.getElementsByClassName('test-button')[0].disabled=true
@@ -302,14 +302,14 @@ viewThings.createChart = function(finalValue){
             datasets:[{
                 data:[finalValue.house,finalValue.car,finalValue.wedding,finalValue.kid,finalValue.parent,finalValue.plane,finalValue.retire,finalValue.company],
                 backgroundColor:[
-                    "rgba(222,184,135)",
-                    "rgba(255,250,250)",
-                    "rgba(230,230,250)",
-                    "rgba(193,255,193)",
-                    "rgba(255,146,143)",
-                    "rgba(187,255,255)",
-                    "rgba(255,193,193)",
-                    "rgba(255,187,255)"
+                    "rgb(222,184,135)",
+                    "rgb(255,250,250)",
+                    "rgb(230,230,250)",
+                    "rgb(193,255,193)",
+                    "rgb(255,146,143)",
+                    "rgb(187,255,255)",
+                    "rgb(255,193,193)",
+                    "rgb(255,187,255)"
                 ],
                 borderColor:"transparent",
                 
