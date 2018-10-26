@@ -278,14 +278,21 @@ viewThings.createFinalDiv = function(){
     
     if(document.body.offsetWidth<=600){
         finalReport.style.height = "750px"
+        document.getElementsByClassName('planet-part')[0].style.top="50px"
+        document.getElementsByClassName('list-part')[0].style.top="80px"
+        document.getElementsByClassName('basic-information-part')[0].style.top="110px"
     }else if(document.body.offsetWidth>=1000){
         finalReport.style.height = "600px";
+        document.getElementsByClassName('planet-part')[0].style.top="25px"
+        document.getElementsByClassName('list-part')[0].style.top="80px"
+        document.getElementsByClassName('basic-information-part')[0].style.top="110px"
     }else{
         finalReport.style.height = "400px";
+        document.getElementsByClassName('planet-part')[0].style.top="50px"
+        document.getElementsByClassName('list-part')[0].style.top="60px"
+        document.getElementsByClassName('basic-information-part')[0].style.top="110px"
     }
-    document.getElementsByClassName('planet-part')[0].style.top="25px"
-    document.getElementsByClassName('list-part')[0].style.top="80px"
-    document.getElementsByClassName('basic-information-part')[0].style.top="110px"
+    
     document.getElementsByClassName('test-button')[0].disabled=true
     document.getElementsByClassName('test-button')[0].innerHTML="星球總價<br>"+tools.formatNumber(finalValue.dreamTotal)
     viewThings.createChart(finalValue)
