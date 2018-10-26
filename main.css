@@ -719,7 +719,11 @@ button{
         border-right: gold solid 1px;
     }
     .final-content{
+        width: 70%;
         height: 175px;
+    }
+    .final-content-type{
+        width: 180px;
     }
     .final-content-type-discript{
         font-size: 16px;
@@ -866,6 +870,9 @@ button{
         flex-direction: row;
         justify-content: space-around;
     }
+    .basic-title{
+        width: 110px;
+    }
     .test-button {
         width: 80%;
         height: 30%;
@@ -980,6 +987,63 @@ button{
         width: 30px;
         font-size: 6px;
         top: 15px;
+    }
+    .house-planet{
+        width:170px;
+        height: 170px;
+        top:-10px;
+        left: -10px;
+        background-size: 36px 27px;
+    }
+    .car-planet{
+        width:170px;
+        height: 170px;
+        top:-10px;
+        left: -10px;
+        background-size: 25px 12px;
+    }
+    .wedding-planet{
+        width:75px;
+        height: 75px;
+        top:37.5px;
+        left: 37.5px;
+        background-size: 27px 27px;
+    }
+    .kid-planet{
+        width:130px;
+        height: 130px;
+        top:10px;
+        left: 10px;
+        background-size: 25px 25px;
+        z-index: 400;
+    }
+    .parent-planet{
+        width:75px;
+        height: 75px;
+        top:37.5px;
+        left: 37.5px;
+        background-size: 18px 25px;
+    }
+    .plane-planet{
+        width:190px;
+        height: 190px;
+        top:-20px;
+        left: -20px;
+        background-size: 25px 12px;
+    }
+    .retire-planet{
+        width:75px;
+        height: 75px;
+        top:37.5px;
+        left: 37.5px;
+        background-size: 27px 27px;
+    }
+    .company-planet{
+        width:170px;
+        height: 170px;
+        top:-10px;
+        left: -10px;
+        background-size: 36px 27px;
     }
 }
 

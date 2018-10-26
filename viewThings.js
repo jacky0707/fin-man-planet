@@ -281,7 +281,7 @@ viewThings.createFinalDiv = function(){
     }else if(document.body.offsetWidth>=1000){
         finalReport.style.height = "600px";
     }else{
-        finalReport.style.height = "500px";
+        finalReport.style.height = "400px";
     }
     document.getElementsByClassName('planet-part')[0].style.top="50px"
     document.getElementsByClassName('list-part')[0].style.top="80px"
