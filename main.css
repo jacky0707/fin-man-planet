@@ -767,7 +767,7 @@ button{
 }
 @media screen and (max-width: 600px){
     .content{
-        width: 300px;
+        width: 90%;
     }
     .doctor-part{
         height: 100px;
