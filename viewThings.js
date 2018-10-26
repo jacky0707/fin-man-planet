@@ -245,7 +245,8 @@ viewThings.createFinalDiv = function(){
     let finalValue = viewThings.prepareFinalValue()
     let finalReport = document.getElementsByClassName("final-report")[0]
     let finalReportContent = tools.createElement("DIV",{atrs:{
-        className:"final-report-content"
+        className:"final-report-content",
+        style:"box-shadow: 0px 0px 3px 3px greenyellow"
     }},finalReport)
 
     let finalTitle = tools.createElement("DIV",{atrs:{
@@ -275,10 +276,16 @@ viewThings.createFinalDiv = function(){
         innerHTML:finalValue.resultSummary
     }},finalReportContent)
     
-    finalReport.style.height = "600px";
+    if(document.body.offsetWidth<=600){
+        finalReport.style.height = "750px"
+    }else if(document.body.offsetWidth>=1000){
+        finalReport.style.height = "600px";
+    }else{
+        finalReport.style.height = "500px";
+    }
     document.getElementsByClassName('planet-part')[0].style.top="50px"
-    document.getElementsByClassName('list-part')[0].style.top="100px"
-    document.getElementsByClassName('basic-information-part')[0].style.top="150px"
+    document.getElementsByClassName('list-part')[0].style.top="80px"
+    document.getElementsByClassName('basic-information-part')[0].style.top="110px"
     document.getElementsByClassName('test-button')[0].disabled=true
     document.getElementsByClassName('test-button')[0].innerHTML="星球總價<br>"+tools.formatNumber(finalValue.dreamTotal)
     viewThings.createChart(finalValue)
@@ -304,8 +311,17 @@ viewThings.createChart = function(finalValue){
                     "rgba(255,193,193)",
                     "rgba(255,187,255)"
                 ],
-                borderColor:"transparent"
+                borderColor:"transparent",
+                
             }]
+        },
+        options: {
+            legend: {
+                labels: {
+                    // This more specific font property overrides the global property
+                    fontColor: 'white'
+                }
+            }
         }
     })
 }
@@ -324,72 +340,3 @@ viewThings.handlerDream = function(dreamTarget){
         document.getElementsByName(dreamTarget.id)[0].value = tools.formatNumber(parseInt(tools.delComma(dreamValue)) + viewThings[dreamTarget.id+"Cost"])
     }
 }
-
-let tools = {}
-tools.formatNumber = function(n){ 
-    n += ""; 
-    var re = /(\d{1,3})(?=(\d{3})+$)/g; 
-    return n.replace(re,"$1,"); 
-}
-tools.inputKeyup = function(){
-    for(let i=0;i<document.getElementsByClassName('dream-total').length;i++){
-        document.getElementsByClassName('dream-total')[i].addEventListener('keyup',function(e){
-            let theValue = e.target.value
-            document.getElementsByClassName('dream-total')[i].value = tools.formatNumber(theValue)
-        })
-    }
-}
-tools.delComma = function(data){ 
-    if(data) { 
-        data = data.replace(/[,]/g, ''); 
-        return data; 
-    } 
-} 
-
-tools.setAttributes = function(obj,attributes){
-    for(let name in attributes){
-		obj[name]=attributes[name];
-	}
-	return obj;
-}
-tools.setStyles = function(obj,styles){
-    for(let name in styles){
-		obj.style[name]=styles[name];
-	}
-	return obj;
-}
-tools.createElement = function(tagName,settings,parentElement){
-    let obj=document.createElement(tagName);
-	if(settings.atrs){tools.setAttributes(obj,settings.atrs);}
-    if(settings.stys){tools.setStyles(obj,settings.stys);}
-	if(parentElement instanceof Element){parentElement.appendChild(obj);}
-    return obj;
-}
-tools.getPosition = function(element){
-    let elementBox = element.getBoundingClientRect()
-    let elementPosition = {}
-    let elementLeft = elementBox.left
-    let elementTop = elementBox.top
-    let scrollDistance = document.documentElement.scrollTop || document.body.scrollTop;
-    let topBorder = elementTop+scrollDistance
-    elementPosition.x=elementLeft
-    elementPosition.y=topBorder
-    return elementPosition
-}
-
-tools.clearTimeOuts = function(){
-    clearTimeout(oneWordByOneWord)
-    clearTimeout(step0)
-    clearTimeout(step1)
-    clearTimeout(step1_1)
-    clearTimeout(step1_2)
-    clearTimeout(step2_0)
-    clearTimeout(step3_0)
-    clearTimeout(step3_1)
-    clearTimeout(step3_2)
-    clearTimeout(step3_3)
-    clearTimeout(observeRobot)
-    clearTimeout(spaceTalk)
-}
-
-
