@@ -696,7 +696,7 @@ button{
 }
 @media screen and (max-width: 1000px) and (min-width: 600px){
     .content{
-        width: 500px;
+        width: 90%;
     }
     .doctor-part{
         height: 150px;
@@ -793,11 +793,12 @@ button{
         padding-top: 10px;
         text-align: center;
         display: flex;
+        align-items: center;
         flex-direction: column;
         justify-content: space-between;
     }
     .final-content-type {
-        width: 100%;
+        width: 300px;
         font-size: 24px;
         height: 100%;
         border-radius: 15px;
