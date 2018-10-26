@@ -434,7 +434,6 @@ button{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     width: 95%;
 }
 .list-balls{
@@ -736,7 +735,7 @@ button{
         width: 18%;
         height: 100%;
         border-radius: 20px;
-        font-size: 14px;
+        font-size: 20px;
         box-shadow: 0px 0px 3px 3px white;
         background: transparent;
         color: white;
@@ -767,6 +766,9 @@ button{
     }
     .side-list{
         width:46%;
+    }
+    .list-item{
+        align-items: center;
     }
 }
 @media screen and (max-width: 600px){
@@ -823,6 +825,9 @@ button{
     .planet-part{
         top: 25px;
         height: 150px;
+    }
+    .list-item{
+        align-items: center;
     }
     .planet{
         height: 150px; 
