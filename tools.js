@@ -50,6 +50,20 @@ tools.getPosition = function(element){
     return elementPosition
 }
 
+let observeRobot
+let spaceTalk
+let step0
+let step1
+let step1_1
+let step1_2
+let step2_0
+let step3_0
+let step3_1
+let step3_2
+let step3_3
+let step3_4
+let oneWordByOneWord
+
 tools.clearTimeOuts = function(){
     clearTimeout(oneWordByOneWord)
     clearTimeout(step0)

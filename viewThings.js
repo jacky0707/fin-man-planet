@@ -31,6 +31,7 @@ let viewThings = {
     companyCost:1000000
 }
 viewThings.guideStep = function(step){
+    // 教學步驟
     let doctor = document.getElementsByClassName("doctor")[0]
     let bb = document.getElementsByClassName("black-background")[0]
     let planetPart = document.getElementsByClassName('planet-part')[0]
@@ -121,17 +122,17 @@ viewThings.guideStep = function(step){
     }
 }
 viewThings.flyInToPlanet = function(target){
-    //按鈕座標
+    // 按鈕座標
     buttonX = tools.getPosition(target).x
     buttonY = tools.getPosition(target).y
     
-    //動畫主角
+    // 動畫圖片
     let flyingDream = document.createElement("DIV")
     flyingDream.classList.add('adding-dream')
     flyingDream.setAttribute("style","position:absolute;left:"+buttonX+"px;top:"+buttonY+"px;background:"+getComputedStyle(target).backgroundImage+"no-repeat scroll 50% 50% / contain padding-box border-box")
     document.body.appendChild(flyingDream)
 
-    //飛行終點
+    // 飛行終點
     setTimeout(function(){
         flyingDream.style.transform="scale(2)"
         flyingDream.style.left = "calc(50vw - 50px)"
