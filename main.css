@@ -53,6 +53,10 @@ button{
     border:1px solid white;
     padding:0px;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration:none;
 }
 .planet-part{
     height: 300px;/* 高度用到 px */
@@ -251,15 +255,15 @@ button{
     justify-content: space-between;
 }
 .dream-button{
-    height: 60px;
-    width: 60px;
-    border-radius: 10px;
+    height: 70px;
+    width: 70px;
+    border-radius: 20px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
     border:0px;
-    box-shadow: 0px 0px 5px 1px white;
+    box-shadow: 0px 0px 5px 3px white;
 }
 .planet{
     position: relative;
@@ -286,13 +290,13 @@ button{
     display: block;
     left: 0px;
     height: 20px;
-    width: 60px;
+    width: 70px;
     font-size: 16px;
     background: white;
     color: black;
     content: "房子";
-    top: 40px;
-    border-radius: 10px;
+    top: 50px;
+    border-radius: 40px;
 }
 #car{
     position: relative;
@@ -303,13 +307,13 @@ button{
     display: block;
     left: 0px;
     height: 20px;
-    width: 60px;
+    width: 70px;
     font-size: 16px;
     background: white;
     color: black;
     content: "車子";
-    top: 40px;
-    border-radius: 10px;
+    top: 50px;
+    border-radius: 40px;
 }
 #wedding{
     position: relative;
@@ -320,13 +324,13 @@ button{
     display: block;
     left: 0px;
     height: 20px;
-    width: 60px;
+    width: 70px;
     font-size: 16px;
     background: white;
     color: black;
     content: "結婚";
-    top: 40px;
-    border-radius: 10px;
+    top: 50px;
+    border-radius: 40px;
 }
 #kid{
     position: relative;
@@ -337,13 +341,13 @@ button{
     display: block;
     left: 0px;
     height: 20px;
-    width: 60px;
+    width: 70px;
     font-size: 16px;
     background: white;
     color: black;
     content: "孩子";
-    top: 40px;
-    border-radius: 10px;
+    top: 50px;
+    border-radius: 40px;
 }
 #parent{
     background-image: url("./img/parent.png");
@@ -354,13 +358,13 @@ button{
     display: block;
     left: 0px;
     height: 20px;
-    width: 60px;
+    width: 70px;
     font-size: 16px;
     background: white;
     color: black;
     content: "父母";
-    top: 40px;
-    border-radius: 10px;
+    top: 50px;
+    border-radius: 40px;
 }
 #plane{
     position: relative;
@@ -371,13 +375,13 @@ button{
     display: block;
     left: 0px;
     height: 20px;
-    width: 60px;
+    width: 70px;
     font-size: 16px;
     background: white;
     color: black;
     content: "旅遊";
-    top: 40px;
-    border-radius: 10px;
+    top: 50px;
+    border-radius: 40px;
 }
 #retire{
     position: relative;
@@ -388,13 +392,13 @@ button{
     display: block;
     left: 0px;
     height: 20px;
-    width: 60px;
+    width: 70px;
     font-size: 16px;
     background: white;
     color: black;
     content: "退休金";
-    top: 40px;
-    border-radius: 10px;
+    top: 50px;
+    border-radius: 40px;
 }
 #company{
     position: relative;
@@ -405,13 +409,13 @@ button{
     display: block;
     left: 0px;
     height: 20px;
-    width: 60px;
+    width: 70px;
     font-size: 16px;
     background: white;
     color: black;
     content: "創業";
-    top: 40px;
-    border-radius: 10px;
+    top: 50px;
+    border-radius: 40px;
 }
 .list-part{
     display: flex;
@@ -694,6 +698,9 @@ button{
     .final-content{
         height: 300px;
     }
+    .planet-part{
+        width: 80%;
+    }
 }
 @media screen and (max-width: 1000px) and (min-width: 600px){
     .content{
@@ -733,6 +740,7 @@ button{
     .planet-part{
         top: 50px;
         margin-bottom: 50px;
+        width: 80%;
     }
     .test-button {
         width: 18%;
@@ -829,6 +837,7 @@ button{
     .planet-part{
         top: 25px;
         height: 150px;
+        width: 95%
     }
     .list-item{
         align-items: center;
