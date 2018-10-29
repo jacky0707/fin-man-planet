@@ -904,49 +904,49 @@ button{
     #house:hover::after {
         height: 15px;
         width: 30px;
-        font-size: 6px;
+        font-size: 12px;
         top: 15px;
     }
     #car:hover::after {
         height: 15px;
         width: 30px;
-        font-size: 6px;
+        font-size: 12px;
         top: 15px;
     }
     #wedding:hover::after {
         height: 15px;
         width: 30px;
-        font-size: 6px;
+        font-size: 12px;
         top: 15px;
     }
     #kid:hover::after {
         height: 15px;
         width: 30px;
-        font-size: 6px;
+        font-size: 12px;
         top: 15px;
     }
     #parent:hover::after {
         height: 15px;
         width: 30px;
-        font-size: 6px;
+        font-size: 12px;
         top: 15px;
     }
     #plane:hover::after {
         height: 15px;
         width: 30px;
-        font-size: 6px;
+        font-size: 12px;
         top: 15px;
     }
     #retire:hover::after {
         height: 15px;
         width: 30px;
-        font-size: 6px;
+        font-size: 12px;
         top: 15px;
     }
     #company:hover::after {
         height: 15px;
         width: 30px;
-        font-size: 6px;
+        font-size: 12px;
         top: 15px;
     }
     
