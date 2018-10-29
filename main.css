@@ -948,54 +948,7 @@ button{
         font-size: 6px;
         top: 15px;
     }
-    #house:active::after {
-        height: 15px;
-        width: 30px;
-        font-size: 6px;
-        top: 15px;
-    }
-    #car:active::after {
-        height: 15px;
-        width: 30px;
-        font-size: 6px;
-        top: 15px;
-    }
-    #wedding:active::after {
-        height: 15px;
-        width: 30px;
-        font-size: 6px;
-        top: 15px;
-    }
-    #kid:active::after {
-        height: 15px;
-        width: 30px;
-        font-size: 6px;
-        top: 15px;
-    }
-    #parent:active::after {
-        height: 15px;
-        width: 30px;
-        font-size: 6px;
-        top: 15px;
-    }
-    #plane:active::after {
-        height: 15px;
-        width: 30px;
-        font-size: 6px;
-        top: 15px;
-    }
-    #retire:active::after {
-        height: 15px;
-        width: 30px;
-        font-size: 6px;
-        top: 15px;
-    }
-    #company:active::after {
-        height: 15px;
-        width: 30px;
-        font-size: 6px;
-        top: 15px;
-    }
+    
     .house-planet{
         width:170px;
         height: 170px;
