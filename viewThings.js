@@ -185,7 +185,7 @@ viewThings.drSay = function(words,spaceTime){
 viewThings.changeInputToDiv = function(){
     let inputNum = document.getElementsByClassName("dream-total").length-1
     for(inputNum;inputNum >= 0; inputNum--){
-        let inputValue = document.getElementsByClassName("dream-total")[inputNum].value
+        let inputValue = document.getElementsByClassName("dream-total")[inputNum].value||0
         document.getElementsByClassName("dream-total")[inputNum].remove()
         if(inputNum > 7){
             tools.createElement("DIV",{atrs:{
@@ -203,12 +203,12 @@ viewThings.changeInputToDiv = function(){
 viewThings.prepareFinalValue = function(){
     let userDatas={}
 
-    userDatas.salary = parseInt(tools.delComma(document.getElementsByName("salary")[0].value))||650000
-    userDatas.age = parseInt(tools.delComma(document.getElementsByName("age")[0].value))||25
-    userDatas.retireAge = parseInt(tools.delComma(document.getElementsByName("retire-age")[0].value))||65
+    userDatas.salary = parseInt(tools.delComma(document.getElementsByName("salary")[0].value))||0
+    userDatas.age = parseInt(tools.delComma(document.getElementsByName("age")[0].value))||0
+    userDatas.retireAge = parseInt(tools.delComma(document.getElementsByName("retire-age")[0].value))||0
     userDatas.fortune = parseInt(tools.delComma(document.getElementsByName("fortune")[0].value))||0
-    userDatas.dieAge = parseInt(tools.delComma(document.getElementsByName("die-age")[0].value))||90
-    userDatas.cost = parseInt(tools.delComma(document.getElementsByName("cost")[0].value))||15000
+    userDatas.dieAge = parseInt(tools.delComma(document.getElementsByName("die-age")[0].value))||0
+    userDatas.cost = parseInt(tools.delComma(document.getElementsByName("cost")[0].value))||0
 
     userDatas.house = parseInt(tools.delComma(document.getElementsByName("house")[0].value))||0
     userDatas.car = parseInt(tools.delComma(document.getElementsByName("car")[0].value))||0
