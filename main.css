@@ -782,9 +782,9 @@ button{
         height: 150px;
     }
     .saying{
-        font-size: 16px;
+        font-size: 14px;
         letter-spacing: 1px;
-        line-height: 18px;
+        line-height: 16px;
     }
     .final-report {
         margin-bottom: 0px;
@@ -890,9 +890,6 @@ button{
         box-shadow: 0px 0px 3px 3px white;
         background: transparent;
         color: white;
-    }
-    .basic-item{
-        font-size: 16px;
     }
     .side-list {
         height: 100%;

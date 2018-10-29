@@ -136,7 +136,7 @@ viewThings.flyInToPlanet = function(target){
     setTimeout(function(){
         flyingDream.style.transform="scale(2)"
         flyingDream.style.left = "calc(50vw - 50px)"
-        flyingDream.style.top = ((document.body.offsetWidth<=600)? "150px":"300px")
+        flyingDream.style.top = ((document.body.offsetWidth<=600)? "200px":"300px")
         flyingDream.style.zIndex = 500
     },1)
     
@@ -147,6 +147,7 @@ viewThings.flyInToPlanet = function(target){
     })
 }
 viewThings.dreamShowUp = function(dream){
+    // 在星球上顯示
     let amount = document.getElementsByClassName(dream+"-planet").length
     let newDream = tools.createElement("DIV",{atrs:{
         id:dream+amount,
@@ -158,6 +159,7 @@ viewThings.dreamShowUp = function(dream){
     return newDream
 }
 viewThings.addtoList = function(dream){
+    // 在 list-part 中顯示
     let amount = document.getElementsByClassName(dream+'-ball').length
     let dreamBall = tools.createElement("DIV",{atrs:{
         id:'list'+dream+amount,
@@ -167,6 +169,7 @@ viewThings.addtoList = function(dream){
     setTimeout(function(){dreamBall.style.right="calc(0px + "+(amount*22)+"px)"},10)
 }
 viewThings.drSay = function(words,spaceTime){
+    // 講話動畫
     if(document.getElementsByClassName("saying")[0]){    
         document.getElementsByClassName("saying")[0].remove()
     }
@@ -222,15 +225,15 @@ viewThings.prepareFinalValue = function(){
     if(userDatas.totalMoney<userDatas.dreamTotal){
         userDatas.resultType="入不敷出"
         userDatas.resultTypeDiscript="收入總值："+tools.formatNumber(userDatas.totalMoney)+"<br>夢想總值："+tools.formatNumber(userDatas.dreamTotal)+"<br>結果：收入不敷夢想的支出。<br><br>這顆星球無法在這樣的收入情況下，完成星球中的夢想"
-        userDatas.resultSummary="<br>您目前的收入不足以打造出您的夢想星球，這意味著您可能需要有更多的收入、降低您夢想的總值或著用更有效的方式來規劃財務。而沒有避險的的人生，就像買大樂透，是一種隨機的賭博。以上的各種問題，星球醫生阿傑都可以成為您的咨詢師給予適合您的建議。"
+        userDatas.resultSummary="<br>您目前的收入不足以打造出您的夢想星球，這意味著您可能需要有更多的收入、降低您夢想的總值或著用更有效的方式來規劃財務。星球醫生阿傑可以成為您的咨詢師給予適合您的建議。"
     }else if(userDatas.totalMoney >= userDatas.dreamTotal && userDatas.totalMoney < (userDatas.dreamTotal+30000000)){
         userDatas.resultType="精益求精"
         userDatas.resultTypeDiscript="收入總值："+tools.formatNumber(userDatas.totalMoney)+"<br>夢想總值："+tools.formatNumber(userDatas.dreamTotal)+"<br>結果：收入足以負擔夢想價值。<br><br>此份收入足以在退休前完成所有夢想"
-        userDatas.resultSummary="<br>您的收入足以在沒有任何意外發生的情況下打造出夢想星球，但沒有避險的的人生，就像買大樂透，是一種隨機的賭博。居安思危、防微杜漸的人有能力活得更加自由！阿傑隨時樂意為您服務(連結)。"
+        userDatas.resultSummary="<br>您的收入足以在沒有任何意外發生的情況下打造出夢想星球，但沒有避險的的人生，就像買大樂透，是一種隨機的賭博。居安思危、防微杜漸的人有能力活得更加自由！阿傑隨時樂意為您服務。"
     }else{
         userDatas.resultType="無所畏懼"
         userDatas.resultTypeDiscript="收入總值："+tools.formatNumber(userDatas.totalMoney)+"<br>夢想總值："+tools.formatNumber(userDatas.dreamTotal)+"<br>結果：收入爆表，財力驚人。<br><br>太厲害了，完成夢想算是輕而易舉呢"
-        userDatas.resultSummary="<br>您擁有十分突出的薪水收入，在達成夢想的部分算是毫無困難的。但阿傑仍然建議您可以在理財和避險的部分有更近一步的了解，歡迎您透過以下連結聯絡我。"
+        userDatas.resultSummary="<br>您擁有十分突出的薪水收入，在達成夢想的部分算是毫無困難的。但阿傑仍然建議您可以在理財和避險的部分有更近一步的了解，歡迎您聯絡我。"
     }
     return userDatas
 }
@@ -326,7 +329,6 @@ viewThings.createChart = function(finalValue){
         options: {
             legend: {
                 labels: {
-                    // This more specific font property overrides the global property
                     fontColor: 'white'
                 }
             }
@@ -336,6 +338,7 @@ viewThings.createChart = function(finalValue){
 
 viewThings.handlerDream = function(dreamTarget){
     if(document.getElementsByClassName(dreamTarget.id+'-planet').length == viewThings[dreamTarget.id+'Length']){
+        viewThings.drSay("此項目數量已達星球上限了喔，但您仍可以在下方調整此項目的總金額。")
         dreamTarget.disabled = true
     }else{
         tools.clearTimeOuts()
