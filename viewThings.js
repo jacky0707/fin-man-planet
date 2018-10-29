@@ -251,7 +251,7 @@ viewThings.createFinalDiv = function(){
     let finalReport = document.getElementsByClassName("final-report")[0]
     let finalReportContent = tools.createElement("DIV",{atrs:{
         className:"final-report-content",
-        style:"box-shadow: 0px 0px 3px 3px greenyellow"
+        style:"box-shadow: 0px 0px 3px 3px wheat"
     }},finalReport)
 
     let finalTitle = tools.createElement("DIV",{atrs:{
