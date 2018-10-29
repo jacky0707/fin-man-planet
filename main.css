@@ -256,8 +256,8 @@ button{
     justify-content: space-between;
 }
 .dream-button{
-    height: 70px;
-    width: 70px;
+    height: 65px;
+    width: 65px;
     border-radius: 20px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -480,7 +480,7 @@ button{
 .basic-info{
     width: 65%;
     height: 100%;
-    box-shadow: 0px 0px 3px 3px plum;
+    box-shadow: 0px 0px 3px 3px gold;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
@@ -491,9 +491,10 @@ button{
     height: 100%;
     border-radius: 50%;
     font-size: 24px;
-    box-shadow: 0px 0px 3px 3px white;
+    box-shadow: 0px 0px 3px 3px gold;
     background: transparent;
     color: white;
+    border: 0px;
 }
 
 .adding-dream{
@@ -748,9 +749,10 @@ button{
         height: 100%;
         border-radius: 20px;
         font-size: 20px;
-        box-shadow: 0px 0px 3px 3px white;
+        box-shadow: 0px 0px 3px 3px gold;
         background: transparent;
         color: white;
+        border: 0px;
     }
     .list-title {
         width: 70px;
@@ -883,7 +885,7 @@ button{
     .basic-info {
         width: 100%;
         height: 60%;
-        box-shadow: 0px 0px 3px 3px plum;
+        box-shadow: 0px 0px 3px 3px gold;
         border-radius: 20px;
         display: flex;
         flex-direction: row;
@@ -897,9 +899,10 @@ button{
         height: 30%;
         border-radius: 50%;
         font-size: 24px;
-        box-shadow: 0px 0px 3px 3px white;
+        box-shadow: 0px 0px 3px 3px gold;
         background: transparent;
         color: white;
+        border: 0px;
     }
     .side-list {
         height: 100%;
