@@ -241,6 +241,7 @@ viewThings.removeDreamAction = function(){
     let numberOfDreams = document.getElementsByClassName('dream-button').length
     for(dream=0;dream<numberOfDreams;dream++){
         let dreamElement = document.getElementsByClassName('dream-button')[dream]
+        dreamElement.style.cursor = "auto"
         dreamElement.removeEventListener("mousedown",handler)
     } 
 }
@@ -350,4 +351,15 @@ viewThings.handlerDream = function(dreamTarget){
         let dreamValue = document.getElementsByName(dreamTarget.id)[0].value
         document.getElementsByName(dreamTarget.id)[0].value = tools.formatNumber(parseInt(tools.delComma(dreamValue)) + viewThings[dreamTarget.id+"Cost"])
     }
+}
+viewThings.createResetButton = function(){
+    let resetButton = document.createElement("BUTTON")
+    resetButton.classList.add("next-button")
+    resetButton.innerHTML = "重<br>建<br>星<br>球"
+    resetButton.style.color = "wheat"
+    resetButton.addEventListener("click",function(){
+        window.location.reload()
+    })
+    let addPlace = document.getElementsByClassName("next-stage-button-place")[0]
+    addPlace.insertBefore(resetButton,addPlace.childNodes[2])
 }

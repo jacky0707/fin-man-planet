@@ -37,6 +37,7 @@ function startTest(){
     viewThings.createFinalDiv()
     window.scrollTo(0,0)
     viewThings.changeInputToDiv()
+    viewThings.createResetButton()
     let secondPageWord = "這邊診斷收入總值的計算是：將您的年薪扣掉每年的生活費，再乘以工作年數，暫時忽略加薪及通膨的部分。"
     viewThings.drSay(secondPageWord)
 }  
