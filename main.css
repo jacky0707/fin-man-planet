@@ -281,7 +281,7 @@ button{
     position: relative;
     background-image: url("./img/house.png")
 }
-#house:hover::after{
+#house:active::after{
     position: absolute;
     display: block;
     left: 0px;
@@ -298,7 +298,7 @@ button{
     position: relative;
     background-image: url("./img/car.png")
 }
-#car:hover::after{
+#car:active::after{
     position: absolute;
     display: block;
     left: 0px;
@@ -315,7 +315,7 @@ button{
     position: relative;
     background-image: url("./img/wedding.png")
 }
-#wedding:hover::after{
+#wedding:active::after{
     position: absolute;
     display: block;
     left: 0px;
@@ -332,7 +332,7 @@ button{
     position: relative;
     background-image: url("./img/kid.png")
 }
-#kid:hover::after{
+#kid:active::after{
     position: absolute;
     display: block;
     left: 0px;
@@ -349,7 +349,7 @@ button{
     background-image: url("./img/parent.png");
     position: relative;
 }
-#parent:hover::after{
+#parent:active::after{
     position: absolute;
     display: block;
     left: 0px;
@@ -366,7 +366,7 @@ button{
     position: relative;
     background-image: url("./img/plane.png")
 }
-#plane:hover::after{
+#plane:active::after{
     position: absolute;
     display: block;
     left: 0px;
@@ -383,7 +383,7 @@ button{
     position: relative;
     background-image: url("./img/retire.png")
 }
-#retire:hover::after{
+#retire:active::after{
     position: absolute;
     display: block;
     left: 0px;
@@ -400,7 +400,7 @@ button{
     position: relative;
     background-image: url("./img/company.png")
 }
-#company:hover::after{
+#company:active::after{
     position: absolute;
     display: block;
     left: 0px;
@@ -898,49 +898,49 @@ button{
         flex-direction: column;
         justify-content: space-evenly;
     }
-    #house:hover::after {
+    #house:active::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
         top: 15px;
     }
-    #car:hover::after {
+    #car:active::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
         top: 15px;
     }
-    #wedding:hover::after {
+    #wedding:active::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
         top: 15px;
     }
-    #kid:hover::after {
+    #kid:active::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
         top: 15px;
     }
-    #parent:hover::after {
+    #parent:active::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
         top: 15px;
     }
-    #plane:hover::after {
+    #plane:active::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
         top: 15px;
     }
-    #retire:hover::after {
+    #retire:active::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
         top: 15px;
     }
-    #company:hover::after {
+    #company:active::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
