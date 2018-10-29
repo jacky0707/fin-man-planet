@@ -52,6 +52,7 @@ button{
     border-radius: 10px;
     border:1px solid white;
     padding:0px;
+    font-size: 14px;
 }
 .planet-part{
     height: 300px;/* 高度用到 px */
@@ -778,12 +779,12 @@ button{
         width: 90%;
     }
     .doctor-part{
-        height: 100px;
+        height: 150px;
     }
     .saying{
-        font-size: 12px;
+        font-size: 16px;
         letter-spacing: 1px;
-        line-height: 14px;
+        line-height: 18px;
     }
     .final-report {
         margin-bottom: 0px;
@@ -845,7 +846,7 @@ button{
     }
     .list-title{
         width: 40px;
-        font-size: 14px;
+        font-size: 18px;
         letter-spacing: 2px;
         border-right: gold solid 1px;
     }
@@ -891,7 +892,7 @@ button{
         color: white;
     }
     .basic-item{
-        font-size: 12px;
+        font-size: 16px;
     }
     .side-list {
         height: 100%;
