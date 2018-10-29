@@ -203,21 +203,21 @@ viewThings.changeInputToDiv = function(){
 viewThings.prepareFinalValue = function(){
     let userDatas={}
 
-    userDatas.salary = parseInt(tools.delComma(document.getElementsByName("salary")[0].value))
-    userDatas.age = parseInt(tools.delComma(document.getElementsByName("age")[0].value))
-    userDatas.retireAge = parseInt(tools.delComma(document.getElementsByName("retire-age")[0].value))
-    userDatas.fortune = parseInt(tools.delComma(document.getElementsByName("fortune")[0].value))
-    userDatas.dieAge = parseInt(tools.delComma(document.getElementsByName("die-age")[0].value))
-    userDatas.cost = parseInt(tools.delComma(document.getElementsByName("cost")[0].value))
+    userDatas.salary = parseInt(tools.delComma(document.getElementsByName("salary")[0].value))||650000
+    userDatas.age = parseInt(tools.delComma(document.getElementsByName("age")[0].value))||25
+    userDatas.retireAge = parseInt(tools.delComma(document.getElementsByName("retire-age")[0].value))||65
+    userDatas.fortune = parseInt(tools.delComma(document.getElementsByName("fortune")[0].value))||0
+    userDatas.dieAge = parseInt(tools.delComma(document.getElementsByName("die-age")[0].value))||90
+    userDatas.cost = parseInt(tools.delComma(document.getElementsByName("cost")[0].value))||15000
 
-    userDatas.house = parseInt(tools.delComma(document.getElementsByName("house")[0].value))
-    userDatas.car = parseInt(tools.delComma(document.getElementsByName("car")[0].value))
-    userDatas.wedding = parseInt(tools.delComma(document.getElementsByName("wedding")[0].value))
-    userDatas.kid = parseInt(tools.delComma(document.getElementsByName("kid")[0].value))
-    userDatas.parent = parseInt(tools.delComma(document.getElementsByName("parent")[0].value))
-    userDatas.plane = parseInt(tools.delComma(document.getElementsByName("plane")[0].value))
-    userDatas.retire = parseInt(tools.delComma(document.getElementsByName("retire")[0].value))
-    userDatas.company = parseInt(tools.delComma(document.getElementsByName("company")[0].value))
+    userDatas.house = parseInt(tools.delComma(document.getElementsByName("house")[0].value))||0
+    userDatas.car = parseInt(tools.delComma(document.getElementsByName("car")[0].value))||0
+    userDatas.wedding = parseInt(tools.delComma(document.getElementsByName("wedding")[0].value))||0
+    userDatas.kid = parseInt(tools.delComma(document.getElementsByName("kid")[0].value))||0
+    userDatas.parent = parseInt(tools.delComma(document.getElementsByName("parent")[0].value))||0
+    userDatas.plane = parseInt(tools.delComma(document.getElementsByName("plane")[0].value))||0
+    userDatas.retire = parseInt(tools.delComma(document.getElementsByName("retire")[0].value))||0
+    userDatas.company = parseInt(tools.delComma(document.getElementsByName("company")[0].value))||0
     
     userDatas.dreamTotal = userDatas.house+userDatas.car+userDatas.wedding+userDatas.kid+userDatas.parent+userDatas.plane+userDatas.retire+userDatas.company
     userDatas.totalMoney = (userDatas.retireAge - userDatas.age)*(userDatas.salary - (userDatas.cost*12))+ userDatas.fortune
@@ -265,7 +265,6 @@ viewThings.createFinalDiv = function(){
 
     let canvasPart = tools.createElement("DIV",{atrs:{
         className:"final-content-type",
-        //innerHTML:result.type
     }},finalContent)
     let finalContentType = tools.createElement("CANVAS",{atrs:{
         className:"pie"
@@ -300,7 +299,15 @@ viewThings.createFinalDiv = function(){
     
     document.getElementsByClassName('test-button')[0].disabled=true
     document.getElementsByClassName('test-button')[0].innerHTML="星球總價<br>"+tools.formatNumber(finalValue.dreamTotal)
-    viewThings.createChart(finalValue)
+    if(!finalValue.dreamTotal){
+        canvasPart.innerHTML = "夢想值為 0 "
+        canvasPart.style = "display:flex;align-items:center;justify-content: center;color:red;border:2px solid red"
+        
+
+    }else{
+        viewThings.createChart(finalValue)
+    }
+    
 }
 viewThings.createChart = function(finalValue){
     let piePartDiv = document.getElementsByClassName('final-content-type')
