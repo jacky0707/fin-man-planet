@@ -135,7 +135,7 @@ viewThings.flyInToPlanet = function(target){
     setTimeout(function(){
         flyingDream.style.transform="scale(2)"
         flyingDream.style.left = "calc(50vw - 50px)"
-        flyingDream.style.top = "300px"
+        flyingDream.style.top = ((document.body.offsetWidth<=600)? "150px":"300px")
         flyingDream.style.zIndex = 500
     },1)
     
