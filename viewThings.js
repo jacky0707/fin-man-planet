@@ -302,8 +302,6 @@ viewThings.createFinalDiv = function(){
     if(!finalValue.dreamTotal){
         canvasPart.innerHTML = "夢想值為 0 "
         canvasPart.style = "display:flex;align-items:center;justify-content: center;color:red;border:2px solid red"
-        
-
     }else{
         viewThings.createChart(finalValue)
     }
