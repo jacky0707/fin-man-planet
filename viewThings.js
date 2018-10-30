@@ -312,7 +312,6 @@ viewThings.createChart = function(finalValue){
     let piePartDiv = document.getElementsByClassName('final-content-type')
     let pieLabels = ['房子','汽車','婚禮','孩子','孝親費','旅遊','退休','創業']
     let piePart = document.getElementsByClassName('pie')[0]
-    console.log(finalValue)
     let pieChart = new Chart(piePart,{
         type:'pie',
         data:{

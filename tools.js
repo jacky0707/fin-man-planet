@@ -79,6 +79,3 @@ tools.clearTimeOuts = function(){
     clearTimeout(observeRobot)
     clearTimeout(spaceTalk)
 }
-module.exports = {
-    tools:tools
-}
