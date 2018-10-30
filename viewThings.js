@@ -181,6 +181,7 @@ viewThings.drSay = function(words,spaceTime){
             sayingDiv.innerHTML = words.substr(0,wordsNum)
         },50*wordsNum)
     }
+    return (50*wordsNum)
 }
 viewThings.changeInputToDiv = function(){
     let inputNum = document.getElementsByClassName("dream-total").length-1

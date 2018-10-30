@@ -35,7 +35,8 @@ tools.createElement = function(tagName,settings,parentElement){
     let obj=document.createElement(tagName);
 	if(settings.atrs){tools.setAttributes(obj,settings.atrs);}
     if(settings.stys){tools.setStyles(obj,settings.stys);}
-	if(parentElement instanceof Element){parentElement.appendChild(obj);}
+    //if(parentElement instanceof Element){parentElement.appendChild(obj);} => Element 無法被測試辨認
+    parentElement.appendChild(obj)
     return obj;
 }
 tools.getPosition = function(element){
@@ -77,4 +78,7 @@ tools.clearTimeOuts = function(){
     clearTimeout(step3_3)
     clearTimeout(observeRobot)
     clearTimeout(spaceTalk)
+}
+module.exports = {
+    tools:tools
 }
