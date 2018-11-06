@@ -290,14 +290,14 @@ button{
 #house:hover::after{
     position: absolute;
     display: block;
-    left: 0px;
+    left: 8px;
     height: 20px;
-    width: 70px;
+    width: 50px;
     font-size: 16px;
     background: white;
     color: black;
     content: "房子";
-    top: 50px;
+    top: 44px;
     border-radius: 40px;
 }
 #car{
@@ -307,14 +307,14 @@ button{
 #car:hover::after{
     position: absolute;
     display: block;
-    left: 0px;
+    left: 8px;
     height: 20px;
-    width: 70px;
+    width: 50px;
     font-size: 16px;
     background: white;
     color: black;
     content: "車子";
-    top: 50px;
+    top: 44px;
     border-radius: 40px;
 }
 #wedding{
@@ -324,14 +324,14 @@ button{
 #wedding:hover::after{
     position: absolute;
     display: block;
-    left: 0px;
+    left: 8px;
     height: 20px;
-    width: 70px;
+    width: 50px;
     font-size: 16px;
     background: white;
     color: black;
     content: "結婚";
-    top: 50px;
+    top: 44px;
     border-radius: 40px;
 }
 #kid{
@@ -341,14 +341,14 @@ button{
 #kid:hover::after{
     position: absolute;
     display: block;
-    left: 0px;
+    left: 8px;
     height: 20px;
-    width: 70px;
+    width: 50px;
     font-size: 16px;
     background: white;
     color: black;
     content: "孩子";
-    top: 50px;
+    top: 44px;
     border-radius: 40px;
 }
 #parent{
@@ -358,14 +358,14 @@ button{
 #parent:hover::after{
     position: absolute;
     display: block;
-    left: 0px;
+    left: 8px;
     height: 20px;
-    width: 70px;
+    width: 50px;
     font-size: 16px;
     background: white;
     color: black;
     content: "父母";
-    top: 50px;
+    top: 44px;
     border-radius: 40px;
 }
 #plane{
@@ -375,14 +375,14 @@ button{
 #plane:hover::after{
     position: absolute;
     display: block;
-    left: 0px;
+    left: 8px;
     height: 20px;
-    width: 70px;
+    width: 50px;
     font-size: 16px;
     background: white;
     color: black;
     content: "旅遊";
-    top: 50px;
+    top: 44px;
     border-radius: 40px;
 }
 #retire{
@@ -392,14 +392,14 @@ button{
 #retire:hover::after{
     position: absolute;
     display: block;
-    left: 0px;
+    left: 8px;
     height: 20px;
-    width: 70px;
+    width: 50px;
     font-size: 16px;
     background: white;
     color: black;
     content: "退休金";
-    top: 50px;
+    top: 44px;
     border-radius: 40px;
 }
 #company{
@@ -409,14 +409,14 @@ button{
 #company:hover::after{
     position: absolute;
     display: block;
-    left: 0px;
+    left: 8px;
     height: 20px;
-    width: 70px;
+    width: 50px;
     font-size: 16px;
     background: white;
     color: black;
     content: "創業";
-    top: 50px;
+    top: 44px;
     border-radius: 40px;
 }
 .list-part{
