@@ -705,7 +705,7 @@ button{
         width: 80%;
     }
 }
-@media screen and (max-width: 1000px) and (min-width: 600px){
+@media screen and (max-width: 1000px) and (min-width: 601px){
     .content{
         width: 90%;
     }
@@ -743,13 +743,13 @@ button{
     .planet-part{
         top: 50px;
         margin-bottom: 50px;
-        width: 80%;
+        width: 100%;
     }
     .test-button {
         width: 18%;
         height: 100%;
         border-radius: 20px;
-        font-size: 20px;
+        font-size: 16px;
         box-shadow: 0px 0px 3px 3px gold;
         background: transparent;
         color: white;
@@ -810,7 +810,7 @@ button{
     }
     .final-content {
         width: 100%;
-        height: 450px;
+        height: auto;
         padding-top: 10px;
         text-align: center;
         display: flex;
@@ -819,9 +819,9 @@ button{
         justify-content: space-between;
     }
     .final-content-type {
-        width: 300px;
+        width: 75%;
         font-size: 24px;
-        height: 100%;
+        height: auto;
         border-radius: 15px;
     }
     .final-content-type-discript {
@@ -831,9 +831,10 @@ button{
         justify-content: center;
         align-items: center;
         color: lightyellow;
+        height: 200px;
     }
     .final-content-type-summary {
-        padding-top: 20px;
+        padding-top: 0px;
         height: 200px;
         font-size: 16px;
         width: 85%;
