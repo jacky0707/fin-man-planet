@@ -917,49 +917,57 @@ button{
         height: 15px;
         width: 30px;
         font-size: 12px;
-        top: 15px;
+        top: 8px;
+        left: 0px;
     }
     #car:hover::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
-        top: 15px;
+        top: 8px;
+        left: 0px;
     }
     #wedding:hover::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
-        top: 15px;
+        top: 8px;
+        left: 0px;
     }
     #kid:hover::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
-        top: 15px;
+        top: 8px;
+        left: 0px;
     }
     #parent:hover::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
-        top: 15px;
+        top: 8px;
+        left: 0px;
     }
     #plane:hover::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
-        top: 15px;
+        top: 8px;
+        left: 0px;
     }
     #retire:hover::after {
         height: 15px;
-        width: 30px;
+        width: 40px;
         font-size: 12px;
-        top: 15px;
+        top: 8px;
+        left: -5px;
     }
     #company:hover::after {
         height: 15px;
         width: 30px;
         font-size: 12px;
-        top: 15px;
+        top: 8px;
+        left: 0px;
     }
     
     .house-planet{
