@@ -1,7 +1,8 @@
 # fin-man-planet
+final project in AppWorks School
+
 **Demo Page**
 
-final project in AppWorks School
 [planet demo](https://jacky0707.github.io/fin-man-planet/)
 
  
